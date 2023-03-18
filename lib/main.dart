@@ -11,10 +11,10 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'OuahidDev',
+      title: 'Nebiyu',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        accentColor: AppColors.yellow,
+        accentColor: AppColors.lightNeon,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       home: Home(),

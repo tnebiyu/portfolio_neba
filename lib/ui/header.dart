@@ -1,16 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_web_portfolio/ui/responsive_widget.dart';
-import 'package:url_launcher/url_launcher.dart';
+import 'package:url_launcher/url_launcher_string.dart';
 
 import '../config/constants.dart';
 import '../config/colors.dart';
+import 'package:hovering/hovering.dart';
 
 class Header extends StatelessWidget {
-  final String _name = "Abdelouahed";
-  final String _job = "Mobile Developer";
-  final String _description =
-      "I am developer has around 4 years experience developing mobile and web applications, using different languages and techniques.";
-
   @override
   Widget build(BuildContext context) => ResponsiveWidget(
         desktopScreen: Container(
@@ -22,17 +18,31 @@ class Header extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                'I’m $_name',
+                'Hi, my name is',
                 style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 40,
-                  fontWeight: FontWeight.w900,
+                  color: AppColors.lightNeon,
+                  fontSize: 18,
                 ),
               ),
+              Row(
+                children: [
+                  Text(
+                    '$kHomeMyName',
+                    style: TextStyle(
+                      color: Colors.grey[100],
+                      fontSize: 70,
+                      fontWeight: FontWeight.w900,
+                    ),
+                  ),
+                  SizedBox(
+                    width: 5,
+                  ),
+                ],
+              ),
               Text(
-                _job,
+                kHeaderJobTitle,
                 style: TextStyle(
-                  color: AppColors.yellow,
+                  color: AppColors.lightNeon,
                   fontSize: 40,
                   fontWeight: FontWeight.w900,
                 ),
@@ -41,22 +51,39 @@ class Header extends StatelessWidget {
               SizedBox(
                 width: MediaQuery.of(context).size.width / 2,
                 child: Text(
-                  _description,
+                  kHeaderDescription,
                   style: Theme.of(context).textTheme.bodyText2!.copyWith(
-                        color: Colors.grey[100],
-                        fontSize: 17,
+                        color: Colors.grey,
+                        fontSize: 20,
                       ),
                 ),
               ),
               const SizedBox(height: 30),
-              RaisedButton(
-                color: AppColors.yellow,
-                textColor: Colors.white,
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 30, vertical: 20),
+            HoverContainer(
+              hoverColor: Colors.grey[900],
+
+
+              child: TextButton(
+
+                style: TextButton.styleFrom(
+                  side: BorderSide(
+                    color: AppColors.lightNeon,
+                  ),
+                  backgroundColor:Colors.transparent,
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 30,
+                    vertical: 20,
+                  ),
+                ),
                 onPressed: _downloadCV,
-                child: Text('Download CV'),
+                child: Text(
+                  'Download CV',
+                  style: TextStyle(
+                    color: AppColors.lightNeon,
+                  ),
+                ),
               ),
+            ),
               const SizedBox(height: 100),
             ],
           ),
@@ -70,7 +97,7 @@ class Header extends StatelessWidget {
             child: Column(
               children: [
                 Text(
-                  'I’m $_name',
+                  'I’m $kHomeMyName',
                   style: TextStyle(
                     color: Colors.white,
                     fontSize: 30,
@@ -78,9 +105,9 @@ class Header extends StatelessWidget {
                   ),
                 ),
                 Text(
-                  _job,
+                  kHeaderJobTitle,
                   style: TextStyle(
-                    color: AppColors.yellow,
+                    color: AppColors.lightNeon,
                     fontSize: 30,
                     fontWeight: FontWeight.w900,
                   ),
@@ -89,7 +116,7 @@ class Header extends StatelessWidget {
                 SizedBox(
                   width: MediaQuery.of(context).size.width,
                   child: Text(
-                    _description,
+                    kHeaderDescription,
                     style: Theme.of(context).textTheme.bodyText2!.copyWith(
                           color: Colors.grey[100],
                           fontSize: 15,
@@ -99,13 +126,21 @@ class Header extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(height: 30),
-                RaisedButton(
-                  color: AppColors.yellow,
-                  textColor: Colors.white,
-                  padding:
-                      const EdgeInsets.symmetric(horizontal: 30, vertical: 20),
+                TextButton(
+                  style: TextButton.styleFrom(
+                    backgroundColor: AppColors.lightNeon,
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 30,
+                      vertical: 20,
+                    ),
+                  ),
                   onPressed: _downloadCV,
-                  child: Text('Download CV'),
+                  child: Text(
+                    'Download CV',
+                    style: TextStyle(
+                      color: Colors.black,
+                    ),
+                  ),
                 ),
                 const SizedBox(height: 100),
               ],
@@ -115,6 +150,6 @@ class Header extends StatelessWidget {
       );
 
   void _downloadCV() {
-    launch(AppConstants.cv);
+    launchUrlString(AppConstants.cv);
   }
 }

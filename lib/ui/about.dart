@@ -1,21 +1,20 @@
 import 'package:flutter/material.dart';
-import 'package:url_launcher/url_launcher.dart';
+import 'package:url_launcher/url_launcher_string.dart';
+import 'package:flutter_web_portfolio/config/constants.dart';
 
 import 'responsive_widget.dart';
 import '../data/skills.dart';
-import '../config/constants.dart';
 import '../config/styles.dart';
 import '../config/colors.dart';
 
+
 class About extends StatelessWidget {
-  final String _avatar = 'images/ouahid.png';
-  final String _description =
-      "I am developer has around 4 years experience developing mobile and web applications, using different languages and techniques.";
+
 
   @override
   Widget build(BuildContext context) => ResponsiveWidget(
         desktopScreen: Container(
-          color: Colors.white,
+          color: kBackgroundColor,
           padding: EdgeInsets.symmetric(
             horizontal: MediaQuery.of(context).size.width * .15,
             vertical: 100,
@@ -29,7 +28,7 @@ class About extends StatelessWidget {
                     child: Container(
                       color: AppColors.greyLight,
                       child: Image.asset(
-                        _avatar,
+                       kAboutAvatarImage,
                         width: 300,
                         height: 300,
                         fit: BoxFit.cover,
@@ -41,40 +40,63 @@ class About extends StatelessWidget {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text(
-                          'ABOUT ME',
-                          style: TextStyle(
-                            color: AppColors.yellow,
-                            fontSize: 40,
-                            fontWeight: FontWeight.bold,
-                          ),
+                        Row(
+                          children: [
+                            Text('01. ', style: TextStyle(color: AppColors.lightNeon, fontSize: 20, fontWeight: FontWeight.bold)),
+                            Text(
+                              'ABOUT ME',
+                              style: TextStyle(
+                                color: AppColors.lightNeon,
+                                fontSize: 28,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                          ],
                         ),
-                        Text(
-                          _description,
+                        SizedBox(height: 10),
+                        Text(kAboutDescription,
+
+
                           style: Theme.of(context).textTheme.bodyText2!.copyWith(
-                                color: Colors.black.withOpacity(.7),
-                                fontSize: 17,
+                                color: Colors.grey,
+                                fontSize: 20,
                               ),
                         ),
                         const SizedBox(height: 30),
                         Row(
                           children: [
-                            RaisedButton(
-                              onPressed: () {},
-                              color: AppColors.yellow,
-                              textColor: Colors.white,
-                              padding: const EdgeInsets.symmetric(
-                                  horizontal: 30, vertical: 20),
-                              child: Text('HIRE ME NOW'),
+                            TextButton(
+                              onPressed: _downloadCV,
+                              style: TextButton.styleFrom(
+                                backgroundColor: AppColors.lightNeon,
+                                padding: const EdgeInsets.symmetric(
+                                    horizontal: 30, vertical: 20),
+                              ),
+                              child: Text('VIEW RESUME'),
                             ),
                             const SizedBox(width: 20),
-                            RaisedButton(
-                              onPressed: _downloadCV,
-                              color: AppColors.black,
-                              textColor: Colors.white,
-                              padding: const EdgeInsets.symmetric(
-                                  horizontal: 30, vertical: 20),
-                              child: Text('VIEW RESUME'),
+                            TextButton(
+                              onPressed: (){
+                                launchUrlString('AppConstants.github');
+                              },
+                              style: TextButton.styleFrom(
+                                backgroundColor: AppColors.lightNeon,
+                                padding: const EdgeInsets.symmetric(
+                                    horizontal: 30, vertical: 20),
+                              ),
+                              child: Text('Github'),
+                            ),
+                            const SizedBox(width: 20),
+                            TextButton(
+                              onPressed: (){
+                                launchUrlString('AppConstants.linkedin');
+                              },
+                              style: TextButton.styleFrom(
+                                backgroundColor: AppColors.lightNeon,
+                                padding: const EdgeInsets.symmetric(
+                                    horizontal: 30, vertical: 20),
+                              ),
+                              child: Text('Linkedin'),
                             ),
                           ],
                         ),
@@ -85,9 +107,9 @@ class About extends StatelessWidget {
               ),
               const SizedBox(height: 100),
               Text('MY SKILLS', style: AppStyles.title),
-              Container(width: 100, height: 2, color: AppColors.yellow),
+              Container(width: 100, height: 2, color: AppColors.lightNeon),
               const SizedBox(height: 3),
-              Container(width: 75, height: 2, color: AppColors.yellow),
+              Container(width: 75, height: 2, color: AppColors.lightNeon),
               const SizedBox(height: 50),
               Wrap(
                 spacing: 25,
@@ -99,7 +121,7 @@ class About extends StatelessWidget {
           ),
         ),
         mobileScreen: Container(
-          color: Colors.white,
+          color: kBackgroundColor,
           padding: EdgeInsets.symmetric(
             horizontal: MediaQuery.of(context).size.width * .15,
             vertical: 50,
@@ -111,7 +133,7 @@ class About extends StatelessWidget {
                 child: Container(
                   color: AppColors.greyLight,
                   child: Image.asset(
-                    _avatar,
+                   kAboutAvatarImage,
                     width: 150,
                     height: 150,
                     fit: BoxFit.cover,
@@ -122,13 +144,13 @@ class About extends StatelessWidget {
               Text(
                 'ABOUT ME',
                 style: TextStyle(
-                  color: AppColors.yellow,
+                  color: AppColors.lightNeon,
                   fontSize: 20,
                   fontWeight: FontWeight.bold,
                 ),
               ),
               Text(
-                _description,
+                kAboutDescription,
                 style: Theme.of(context).textTheme.bodyText2!.copyWith(
                       color: Colors.black.withOpacity(.7),
                       fontSize: 13,
@@ -136,28 +158,46 @@ class About extends StatelessWidget {
                 textAlign: TextAlign.center,
               ),
               const SizedBox(height: 30),
-              RaisedButton(
-                onPressed: () {},
-                color: AppColors.yellow,
-                textColor: Colors.white,
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 30, vertical: 20),
-                child: Text('HIRE ME NOW'),
+
+              const SizedBox(height: 20),
+              TextButton(
+                onPressed: _downloadCV,
+                style: TextButton.styleFrom(
+                  backgroundColor: AppColors.lightNeon,
+                  padding: const EdgeInsets.symmetric(
+                      horizontal: 30, vertical: 20),
+                ),
+                child: Text('VIEW RESUME'),
               ),
               const SizedBox(height: 20),
-              RaisedButton(
-                onPressed: _downloadCV,
-                color: AppColors.black,
-                textColor: Colors.white,
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 30, vertical: 20),
-                child: Text('VIEW RESUME'),
+              TextButton(
+                onPressed: (){
+                  launchUrlString('AppConstants.github');
+                },
+                style: TextButton.styleFrom(
+                  backgroundColor: AppColors.lightNeon,
+                  padding: const EdgeInsets.symmetric(
+                      horizontal: 30, vertical: 20),
+                ),
+                child: Text('Github'),
+              ),
+              const SizedBox(height: 20),
+              TextButton(
+                onPressed: (){
+                  launchUrlString('AppConstants.linkedin');
+                },
+                style: TextButton.styleFrom(
+                  backgroundColor: AppColors.lightNeon,
+                  padding: const EdgeInsets.symmetric(
+                      horizontal: 30, vertical: 20),
+                ),
+                child: Text('Linkedin'),
               ),
               const SizedBox(height: 50),
               Text('MY SKILLS', style: AppStyles.title),
-              Container(width: 75, height: 2, color: AppColors.yellow),
+              Container(width: 75, height: 2, color: AppColors.lightNeon),
               const SizedBox(height: 3),
-              Container(width: 50, height: 2, color: AppColors.yellow),
+              Container(width: 50, height: 2, color: AppColors.lightNeon),
               const SizedBox(height: 25),
               Wrap(
                 spacing: 10,
@@ -172,7 +212,7 @@ class About extends StatelessWidget {
       );
 
   void _downloadCV() {
-    launch(AppConstants.cv);
+    launchUrlString(AppConstants.cv);
   }
 
   Widget _buildSkill(Skill skill) => Chip(label: Text(skill.name!));

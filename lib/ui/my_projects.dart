@@ -11,14 +11,14 @@ class MyProjects extends StatelessWidget {
   Widget build(BuildContext context) {
     return ResponsiveWidget(
       desktopScreen: Container(
-        color: AppColors.greyLight,
+
         padding: EdgeInsets.symmetric(vertical: 100),
         child: Column(
           children: [
             Text('MY PROJECTS', style: AppStyles.title),
-            Container(width: 100, height: 2, color: AppColors.yellow),
+            Container(width: 100, height: 2, color: AppColors.lightNeon),
             const SizedBox(height: 3),
-            Container(width: 75, height: 2, color: AppColors.yellow),
+            Container(width: 75, height: 2, color: AppColors.lightNeon),
             const SizedBox(height: 50),
             ...PROJECTS.map((p) => _buildProject(context, p)).toList(),
           ],
@@ -37,9 +37,9 @@ class MyProjects extends StatelessWidget {
               style: AppStyles.title,
               textAlign: TextAlign.center,
             ),
-            Container(width: 75, height: 2, color: AppColors.yellow),
+            Container(width: 75, height: 2, color: AppColors.lightNeon),
             const SizedBox(height: 3),
-            Container(width: 50, height: 2, color: AppColors.yellow),
+            Container(width: 50, height: 2, color: AppColors.lightNeon),
             const SizedBox(height: 50),
             Wrap(
               children: PROJECTS.map((p) => _buildProject(context, p)).toList(),
@@ -90,23 +90,18 @@ class MyProjects extends StatelessWidget {
                         SizedBox(
                           height: MediaQuery.of(context).size.width * .025,
                         ),
-                        OutlineButton(
+                        TextButton(
+                          style: TextButton.styleFrom(
+                            primary: AppColors.black,
+                            backgroundColor: AppColors.lightNeon,
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(5),
+                            ),
+                          ),
                           onPressed: () {
                             launch(project.url!);
                           },
-                          color: AppColors.yellow,
-                          textColor: AppColors.yellow,
-                          borderSide: BorderSide(
-                            color: AppColors.yellow!.withOpacity(.5),
-                            width: 5,
-                          ),
-                          padding: const EdgeInsets.symmetric(
-                            horizontal: 50,
-                            vertical: 20,
-                          ),
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(20),
-                          ),
+
                           child: Text('Visit'),
                         ),
                       ],
@@ -154,22 +149,16 @@ class MyProjects extends StatelessWidget {
               SizedBox(
                 height: MediaQuery.of(context).size.width * .025,
               ),
-              OutlineButton(
+              TextButton(
                 onPressed: () {
                   launch(project.url!);
                 },
-                color: AppColors.yellow,
-                textColor: AppColors.yellow,
-                borderSide: BorderSide(
-                  color: AppColors.yellow!.withOpacity(.5),
-                  width: 5,
-                ),
-                padding: const EdgeInsets.symmetric(
-                  horizontal: 50,
-                  vertical: 20,
-                ),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(20),
+                style: TextButton.styleFrom(
+                  primary: AppColors.black,
+                  backgroundColor: AppColors.lightNeon,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(5),
+                  ),
                 ),
                 child: Text('Visit'),
               ),

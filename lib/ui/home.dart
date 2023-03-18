@@ -2,7 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_web_portfolio/ui/responsive_widget.dart';
-import 'package:url_launcher/url_launcher.dart';
+import 'package:url_launcher/url_launcher_string.dart';
 
 import 'about.dart';
 import 'contact_us.dart';
@@ -49,7 +49,7 @@ class _HomeState extends State<Home> {
         body: Container(
           decoration: BoxDecoration(
             image: DecorationImage(
-              image: AssetImage('images/background.jpg'),
+              image: AssetImage('$kBackgroundImage'),
               fit: BoxFit.cover,
             ),
           ),
@@ -64,7 +64,7 @@ class _HomeState extends State<Home> {
                 flexibleSpace: Container(
                   decoration: BoxDecoration(
                     image: DecorationImage(
-                      image: AssetImage('images/cover.jpg'),
+                      image: AssetImage('$kCoverImage'),
                       fit: BoxFit.cover,
                     ),
                   ),
@@ -91,8 +91,8 @@ class _HomeState extends State<Home> {
                     child: Container(
                       width: 40,
                       height: 40,
-                      color: AppColors.yellow,
-                      child: Image.asset('images/ouahid.png'),
+                      color: AppColors.lightNeon,
+                      child: Image.asset('$kHomeIconImage', fit: BoxFit.cover,),
                     ),
                   ),
                 ),
@@ -104,50 +104,93 @@ class _HomeState extends State<Home> {
                   Row(
                     children: [
                       MaterialButton(
+                       hoverColor: Colors.white60,
                         onPressed: _scrollToAbout,
                         highlightColor: Colors.white60,
-                        child: Text(
-                          'About Me',
-                          style: TextStyle(
-                              color: Colors.white, fontWeight: FontWeight.bold),
+
+                        child: Row(
+                          children: [
+                            Text('01.', style: TextStyle(
+                              color: AppColors.lightNeon,
+                              fontWeight: FontWeight.bold,
+                            ),),
+                            SizedBox(width: 4),
+                            Text(
+                              'About Me',
+                              style: TextStyle(
+                                  color: Colors.white, fontWeight: FontWeight.bold),
+                            ),
+                          ],
                         ),
                       ),
                       MaterialButton(
+                        hoverColor: Colors.white60,
                         onPressed: _scrollToStatistics,
-                        child: Text(
-                          'Experience',
-                          style: TextStyle(
-                              color: Colors.white, fontWeight: FontWeight.bold),
+                        child: Row(
+                          children: [
+                            Text('02.', style: TextStyle(
+                              color: AppColors.lightNeon,
+                              fontWeight: FontWeight.bold,
+                            ),),
+                            SizedBox(width: 4),
+                            Text(
+                              'Experience',
+                              style: TextStyle(
+                                  color: Colors.white, fontWeight: FontWeight.bold),
+                            ),
+                          ],
                         ),
                       ),
                       MaterialButton(
+                        hoverColor: Colors.white60,
                         onPressed: _scrollToWorkingProcess,
-                        child: Text(
-                          'Process',
-                          style: TextStyle(
-                              color: Colors.white, fontWeight: FontWeight.bold),
+                        child: Row(
+                          children: [
+                            Text('03.', style: TextStyle(
+                              color: AppColors.lightNeon,
+                              fontWeight: FontWeight.bold,
+                            ),),
+                            SizedBox(width: 4),
+                            Text(
+                              'Process',
+                              style: TextStyle(
+                                  color: Colors.white, fontWeight: FontWeight.bold),
+                            ),
+                          ],
                         ),
                       ),
                       MaterialButton(
+                        hoverColor: Colors.white60,
                         onPressed: _scrollToRecentProjects,
-                        child: Text(
-                          'Portfolio',
-                          style: TextStyle(
-                              color: Colors.white, fontWeight: FontWeight.bold),
+                        child: Row(
+                          children: [
+                            Text('04.', style: TextStyle(
+                              color: AppColors.lightNeon,
+                              fontWeight: FontWeight.bold,
+                            ),),
+                            SizedBox(width: 4),
+                            Text(
+                              'Projects',
+                              style: TextStyle(
+                                  color: Colors.white, fontWeight: FontWeight.bold),
+                            ),
+                          ],
                         ),
                       ),
                       const SizedBox(width: 20),
-                      RaisedButton(
+                      TextButton(
                         onPressed: _scrollToContactUs,
-                        color: AppColors.yellow,
-                        padding: const EdgeInsets.symmetric(
-                          horizontal: 40,
-                          vertical: 15,
+                        style: TextButton.styleFrom(
+                          backgroundColor: AppColors.lightNeon,
+                          padding: const EdgeInsets.symmetric(
+                            horizontal: 40,
+                            vertical: 15,
+                          ),
                         ),
                         child: Text(
                           'Contact Me',
                           style: TextStyle(
-                              color: Colors.white, fontWeight: FontWeight.bold),
+                              color: Colors.black, fontWeight: FontWeight.bold),
                         ),
                       ),
                     ],
@@ -171,13 +214,13 @@ class _HomeState extends State<Home> {
                   height: 100,
                   margin: const EdgeInsets.symmetric(vertical: 20),
                   decoration: BoxDecoration(
-                    color: AppColors.yellow,
+                    color: AppColors.lightNeon,
                     borderRadius: BorderRadius.circular(1000),
                   ),
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(1000),
                     child: Image.asset(
-                      'images/ouahid.png',
+                      '$kHomeIconImage',
                       fit: BoxFit.cover,
                     ),
                   ),
@@ -207,19 +250,21 @@ class _HomeState extends State<Home> {
                 ListTile(
                   onTap: _scrollToRecentProjects,
                   title: Text(
-                    'Portfolio',
+                    'Projects',
                     style: TextStyle(fontWeight: FontWeight.bold),
                   ),
                 ),
                 Divider(),
                 const SizedBox(height: 20),
                 ListTile(
-                  title: RaisedButton(
+                  title: TextButton(
                     onPressed: _scrollToContactUs,
-                    color: AppColors.yellow,
-                    padding: const EdgeInsets.symmetric(
-                      horizontal: 40,
-                      vertical: 15,
+                    style: TextButton.styleFrom(
+                      backgroundColor: AppColors.lightNeon,
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: 40,
+                        vertical: 15,
+                      ),
                     ),
                     child: Text(
                       'Contact Me',
@@ -233,7 +278,7 @@ class _HomeState extends State<Home> {
                   children: [
                     InkWell(
                       onTap: () async {
-                        launch(AppConstants.github);
+                  launchUrlString(AppConstants.github);
                       },
                       child: AppIcon(
                         'icons/github.png',
@@ -243,7 +288,7 @@ class _HomeState extends State<Home> {
                     const SizedBox(width: 20),
                     InkWell(
                       onTap: () {
-                        launch(AppConstants.linkedin);
+                        launchUrlString(AppConstants.linkedin);
                       },
                       child: AppIcon(
                         'icons/linkedin.png',
@@ -253,7 +298,7 @@ class _HomeState extends State<Home> {
                     const SizedBox(width: 20),
                     InkWell(
                       onTap: () {
-                        launch(AppConstants.twitter);
+                        launchUrlString(AppConstants.twitter);
                       },
                       child: AppIcon(
                         'icons/twitter.png',
@@ -261,15 +306,6 @@ class _HomeState extends State<Home> {
                       ),
                     ),
                     const SizedBox(width: 20),
-                    InkWell(
-                      onTap: () {
-                        launch(AppConstants.facebook);
-                      },
-                      child: AppIcon(
-                        'icons/facebook.png',
-                        color: AppColors.black,
-                      ),
-                    ),
                   ],
                 ),
                 const SizedBox(height: 20),
@@ -280,7 +316,7 @@ class _HomeState extends State<Home> {
         body: Container(
           decoration: BoxDecoration(
             image: DecorationImage(
-              image: AssetImage('images/background.jpg'),
+              image: AssetImage('$kBackgroundImage'),
               fit: BoxFit.cover,
             ),
           ),
@@ -303,8 +339,8 @@ class _HomeState extends State<Home> {
                         child: Container(
                           width: 40,
                           height: 40,
-                          color: AppColors.yellow,
-                          child: Image.asset('images/ouahid.png'),
+                          color: AppColors.lightNeon,
+                          child: Image.asset('$kHomeIconImage'),
                         ),
                       ),
                     ),
@@ -313,7 +349,7 @@ class _HomeState extends State<Home> {
                 flexibleSpace: Container(
                   decoration: BoxDecoration(
                     image: DecorationImage(
-                      image: AssetImage('images/cover.jpg'),
+                      image: AssetImage('$kCoverImage'),
                       fit: BoxFit.cover,
                     ),
                   ),
@@ -356,7 +392,7 @@ class _HomeState extends State<Home> {
         ),
         SliverToBoxAdapter(
           key: _workingProcessGlobaleKye,
-          child: WorkingProcess(),
+          child: Offer(),
         ),
         SliverToBoxAdapter(
           key: _recentProjectsGlobaleKey,

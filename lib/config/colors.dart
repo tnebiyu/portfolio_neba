@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
 mixin AppColors {
-  static final yellow = Colors.yellow[800];
+
+  static final lightNeon = Color(0xFF64FFDA);
 
   static final black = Colors.black87;
 

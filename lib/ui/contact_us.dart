@@ -26,7 +26,7 @@ class _ContactUsState extends State<ContactUs> {
   Widget build(BuildContext context) {
     return ResponsiveWidget(
       desktopScreen: Container(
-        color: Colors.white,
+        color: kBackgroundColor,
         padding: EdgeInsets.symmetric(
           horizontal: MediaQuery.of(context).size.width * .15,
           vertical: 100,
@@ -34,9 +34,9 @@ class _ContactUsState extends State<ContactUs> {
         child: Column(
           children: [
             Text('GET IN TOUCH', style: AppStyles.title),
-            Container(width: 100, height: 2, color: AppColors.yellow),
+            Container(width: 100, height: 2, color: AppColors.lightNeon),
             const SizedBox(height: 3),
-            Container(width: 75, height: 2, color: AppColors.yellow),
+            Container(width: 75, height: 2, color: AppColors.lightNeon),
             const SizedBox(height: 50),
             Row(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -47,19 +47,19 @@ class _ContactUsState extends State<ContactUs> {
                     children: [
                       _buildContactInfo(
                         'icons/email.png',
-                        'Mail Us:',
+                        'Mail Me:',
                         AppConstants.mail,
                       ),
                       const SizedBox(height: 20),
                       _buildContactInfo(
                         'icons/call.png',
-                        'Call Us:',
+                        'Call Me:',
                         AppConstants.phone,
                       ),
                       const SizedBox(height: 20),
                       _buildContactInfo(
                         'icons/pin.png',
-                        'Visit Us:',
+                        'Location:',
                         AppConstants.location,
                       ),
                     ],
@@ -74,7 +74,7 @@ class _ContactUsState extends State<ContactUs> {
         ),
       ),
       mobileScreen: Container(
-        color: Colors.white,
+        color: kBackgroundColor,
         padding: EdgeInsets.symmetric(
           horizontal: MediaQuery.of(context).size.width * .15,
           vertical: 100,
@@ -86,9 +86,9 @@ class _ContactUsState extends State<ContactUs> {
               style: AppStyles.title,
               textAlign: TextAlign.center,
             ),
-            Container(width: 75, height: 2, color: AppColors.yellow),
+            Container(width: 75, height: 2, color: AppColors.lightNeon),
             const SizedBox(height: 3),
-            Container(width: 50, height: 2, color: AppColors.yellow),
+            Container(width: 50, height: 2, color: AppColors.lightNeon),
             const SizedBox(height: 50),
             Column(
               children: [
@@ -97,19 +97,19 @@ class _ContactUsState extends State<ContactUs> {
                   children: [
                     _buildContactInfo(
                       'icons/email.png',
-                      'Mail Us:',
+                      'Mail Me:',
                       AppConstants.mail,
                     ),
                     const SizedBox(height: 20),
                     _buildContactInfo(
                       'icons/call.png',
-                      'Call Us:',
+                      'Call Me:',
                       AppConstants.phone,
                     ),
                     const SizedBox(height: 20),
                     _buildContactInfo(
                       'icons/pin.png',
-                      'Visit Us:',
+                      'Location:',
                       AppConstants.location,
                     ),
                   ],
@@ -217,11 +217,11 @@ class _ContactUsState extends State<ContactUs> {
                 ),
               ),
               const SizedBox(height: 20),
-              RaisedButton(
-                color: AppColors.yellow,
-                textColor: Colors.white,
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 30, vertical: 20),
+              TextButton(
+                style: TextButton.styleFrom(
+                  backgroundColor: AppColors.lightNeon,
+                  padding: EdgeInsets.symmetric(vertical: 15, horizontal: 30),
+                ),
                 onPressed: _sendMail,
                 child: Text('Send'),
               ),

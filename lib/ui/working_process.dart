@@ -1,16 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_web_portfolio/config/constants.dart';
 import 'package:flutter_web_portfolio/ui/responsive_widget.dart';
 
 import '../config/styles.dart';
 import '../config/colors.dart';
 import 'icon.dart';
 
-class WorkingProcess extends StatelessWidget {
+class Offer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ResponsiveWidget(
       desktopScreen: Container(
-        color: Colors.white,
+        color: kBackgroundColor,
         padding: EdgeInsets.symmetric(
           horizontal: MediaQuery.of(context).size.width * .15,
           vertical: 100,
@@ -18,20 +19,21 @@ class WorkingProcess extends StatelessWidget {
         child: Column(
           children: [
             Text('WORKING PROCESS', style: AppStyles.title),
-            Container(width: 100, height: 2, color: AppColors.yellow),
+            Container(width: 100, height: 2, color: AppColors.lightNeon),
             const SizedBox(height: 3),
-            Container(width: 75, height: 2, color: AppColors.yellow),
+            Container(width: 75, height: 2, color: AppColors.lightNeon),
             const SizedBox(height: 50),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Expanded(
+
                   child: __buildProcess(
                       context,
                       '01.',
                       'icons/pencil.png',
                       'Plan',
-                      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor laboris nisi ut aliquip ex ea commodo.'),
+                      'Product design, UI/UX design, Design systems'),
                 ),
                 const SizedBox(width: 10),
                 Expanded(
@@ -39,8 +41,8 @@ class WorkingProcess extends StatelessWidget {
                       context,
                       '02.',
                       'icons/design.png',
-                      'Design',
-                      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor laboris nisi ut aliquip ex ea commodo.'),
+                      'Development',
+                      'Developing scalable web apps and mobile apps'),
                 ),
                 const SizedBox(width: 10),
                 Expanded(
@@ -48,8 +50,8 @@ class WorkingProcess extends StatelessWidget {
                       context,
                       '03.',
                       'icons/coding.png',
-                      'Code',
-                      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor laboris nisi ut aliquip ex ea commodo.'),
+                      'Maintenance',
+                      'Continuous monitoring, maintenance and support'),
                 )
               ],
             ),
@@ -69,9 +71,9 @@ class WorkingProcess extends StatelessWidget {
               style: AppStyles.title,
               textAlign: TextAlign.center,
             ),
-            Container(width: 75, height: 2, color: AppColors.yellow),
+            Container(width: 75, height: 2, color: AppColors.lightNeon),
             const SizedBox(height: 3),
-            Container(width: 50, height: 2, color: AppColors.yellow),
+            Container(width: 50, height: 2, color: AppColors.lightNeon),
             const SizedBox(height: 50),
             __buildProcess(context, '01.', 'icons/pencil.png', 'Plan',
                 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor laboris nisi ut aliquip ex ea commodo.'),
@@ -90,6 +92,7 @@ class WorkingProcess extends StatelessWidget {
   Widget __buildProcess(BuildContext context, String index, String iconPath,
       String title, String description) {
     return Card(
+      color: kCardColor,
       elevation: 3,
       child: Padding(
         padding: const EdgeInsets.all(20),

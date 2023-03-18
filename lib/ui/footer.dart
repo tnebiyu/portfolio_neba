@@ -27,7 +27,7 @@ class Footer extends StatelessWidget {
             Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                // Get in touch
+
                 Expanded(
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -37,7 +37,7 @@ class Footer extends StatelessWidget {
                           Container(
                             width: 2,
                             height: 20,
-                            color: AppColors.yellow,
+                            color: AppColors.lightNeon,
                           ),
                           const SizedBox(width: 7.5),
                           Text(
@@ -119,7 +119,7 @@ class Footer extends StatelessWidget {
                           Container(
                             width: 2,
                             height: 20,
-                            color: AppColors.yellow,
+                            color: AppColors.lightNeon,
                           ),
                           const SizedBox(width: 7.5),
                           Text(
@@ -153,7 +153,7 @@ class Footer extends StatelessWidget {
                           Container(
                             width: 2,
                             height: 20,
-                            color: AppColors.yellow,
+                            color: AppColors.lightNeon,
                           ),
                           const SizedBox(width: 7.5),
                           Text(
@@ -216,7 +216,7 @@ class Footer extends StatelessWidget {
                     Container(
                       width: 2,
                       height: 20,
-                      color: AppColors.yellow,
+                      color: AppColors.lightNeon,
                     ),
                     const SizedBox(width: 7.5),
                     Text(
@@ -296,7 +296,7 @@ class Footer extends StatelessWidget {
                     Container(
                       width: 2,
                       height: 20,
-                      color: AppColors.yellow,
+                      color: AppColors.lightNeon,
                     ),
                     const SizedBox(width: 7.5),
                     Text(
@@ -328,7 +328,7 @@ class Footer extends StatelessWidget {
                     Container(
                       width: 2,
                       height: 20,
-                      color: AppColors.yellow,
+                      color: AppColors.lightNeon,
                     ),
                     const SizedBox(width: 7.5),
                     Text(
@@ -421,11 +421,11 @@ class Footer extends StatelessWidget {
           child: AppIcon('icons/twitter.png'),
         ),
         const SizedBox(width: 20),
-        InkWell(
-          onTap: () {
-            launch(AppConstants.facebook);
-          },
-          child: AppIcon('icons/facebook.png'),
-        ),
+        // InkWell(
+        //   onTap: () {
+        //     launch(AppConstants.facebook);
+        //   },
+        //   child: AppIcon('icons/facebook.png'),
+        // ),
       ];
 }
