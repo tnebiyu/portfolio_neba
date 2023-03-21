@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hovering/hovering.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 import 'package:flutter_web_portfolio/config/constants.dart';
 
@@ -65,38 +66,82 @@ class About extends StatelessWidget {
                         const SizedBox(height: 30),
                         Row(
                           children: [
-                            TextButton(
-                              onPressed: _downloadCV,
-                              style: TextButton.styleFrom(
-                                backgroundColor: AppColors.lightNeon,
-                                padding: const EdgeInsets.symmetric(
-                                    horizontal: 30, vertical: 20),
+                            HoverContainer(
+                              hoverColor: Colors.grey[900],
+
+
+                              child: TextButton(
+
+                                style: TextButton.styleFrom(
+                                  side: BorderSide(
+                                    color: AppColors.lightNeon,
+                                  ),
+                                  backgroundColor:Colors.transparent,
+                                  padding: const EdgeInsets.symmetric(
+                                    horizontal: 30,
+                                    vertical: 20,
+                                  ),
+                                ),
+                                onPressed: _downloadCV,
+                                child: Text(
+                                  'View Resume',
+                                  style: TextStyle(
+                                    color: AppColors.lightNeon,
+                                  ),
+                                ),
                               ),
-                              child: Text('VIEW RESUME'),
                             ),
                             const SizedBox(width: 20),
-                            TextButton(
-                              onPressed: (){
-                                launchUrlString('AppConstants.github');
-                              },
-                              style: TextButton.styleFrom(
-                                backgroundColor: AppColors.lightNeon,
-                                padding: const EdgeInsets.symmetric(
-                                    horizontal: 30, vertical: 20),
+                            HoverContainer(
+                              hoverColor: Colors.grey[900],
+
+
+                              child: TextButton(
+
+                                style: TextButton.styleFrom(
+                                  side: BorderSide(
+                                    color: AppColors.lightNeon,
+                                  ),
+                                  backgroundColor:Colors.transparent,
+                                  padding: const EdgeInsets.symmetric(
+                                    horizontal: 30,
+                                    vertical: 20,
+                                  ),
+                                ),
+                                onPressed: _goToGithub,
+                                child: Text(
+                                  'Github',
+                                  style: TextStyle(
+                                    color: AppColors.lightNeon,
+                                  ),
+                                ),
                               ),
-                              child: Text('Github'),
                             ),
                             const SizedBox(width: 20),
-                            TextButton(
-                              onPressed: (){
-                                launchUrlString('AppConstants.linkedin');
-                              },
-                              style: TextButton.styleFrom(
-                                backgroundColor: AppColors.lightNeon,
-                                padding: const EdgeInsets.symmetric(
-                                    horizontal: 30, vertical: 20),
+                            HoverContainer(
+                              hoverColor: Colors.grey[900],
+
+
+                              child: TextButton(
+
+                                style: TextButton.styleFrom(
+                                  side: BorderSide(
+                                    color: AppColors.lightNeon,
+                                  ),
+                                  backgroundColor:Colors.transparent,
+                                  padding: const EdgeInsets.symmetric(
+                                    horizontal: 30,
+                                    vertical: 20,
+                                  ),
+                                ),
+                                onPressed: _goToLinkedin,
+                                child: Text(
+                                  'Linkedin',
+                                  style: TextStyle(
+                                    color: AppColors.lightNeon,
+                                  ),
+                                ),
                               ),
-                              child: Text('Linkedin'),
                             ),
                           ],
                         ),
@@ -152,46 +197,90 @@ class About extends StatelessWidget {
               Text(
                 kAboutDescription,
                 style: Theme.of(context).textTheme.bodyText2!.copyWith(
-                      color: Colors.black.withOpacity(.7),
-                      fontSize: 13,
-                    ),
+                  color: Colors.grey,
+                  fontSize: 13,
+                ),
                 textAlign: TextAlign.center,
               ),
               const SizedBox(height: 30),
 
               const SizedBox(height: 20),
-              TextButton(
-                onPressed: _downloadCV,
-                style: TextButton.styleFrom(
-                  backgroundColor: AppColors.lightNeon,
-                  padding: const EdgeInsets.symmetric(
-                      horizontal: 30, vertical: 20),
+              HoverContainer(
+                hoverColor: Colors.grey[900],
+
+
+                child: TextButton(
+
+                  style: TextButton.styleFrom(
+                    side: BorderSide(
+                      color: AppColors.lightNeon,
+                    ),
+                    backgroundColor:Colors.transparent,
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 30,
+                      vertical: 20,
+                    ),
+                  ),
+                  onPressed: _downloadCV,
+                  child: Text(
+                    'View Resume',
+                    style: TextStyle(
+                      color: AppColors.lightNeon,
+                    ),
+                  ),
                 ),
-                child: Text('VIEW RESUME'),
               ),
               const SizedBox(height: 20),
-              TextButton(
-                onPressed: (){
-                  launchUrlString('AppConstants.github');
-                },
-                style: TextButton.styleFrom(
-                  backgroundColor: AppColors.lightNeon,
-                  padding: const EdgeInsets.symmetric(
-                      horizontal: 30, vertical: 20),
+              HoverContainer(
+                hoverColor: Colors.grey[900],
+
+
+                child: TextButton(
+
+                  style: TextButton.styleFrom(
+                    side: BorderSide(
+                      color: AppColors.lightNeon,
+                    ),
+                    backgroundColor:Colors.transparent,
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 30,
+                      vertical: 20,
+                    ),
+                  ),
+                  onPressed: _goToGithub,
+                  child: Text(
+                    'Github',
+                    style: TextStyle(
+                      color: AppColors.lightNeon,
+                    ),
+                  ),
                 ),
-                child: Text('Github'),
               ),
               const SizedBox(height: 20),
-              TextButton(
-                onPressed: (){
-                  launchUrlString('AppConstants.linkedin');
-                },
-                style: TextButton.styleFrom(
-                  backgroundColor: AppColors.lightNeon,
-                  padding: const EdgeInsets.symmetric(
-                      horizontal: 30, vertical: 20),
+              HoverContainer(
+                hoverColor: Colors.grey[900],
+
+
+                child: TextButton(
+
+                  style: TextButton.styleFrom(
+                    side: BorderSide(
+                      color: AppColors.lightNeon,
+                    ),
+                    backgroundColor:Colors.transparent,
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 30,
+                      vertical: 20,
+                    ),
+                  ),
+                  onPressed: _goToLinkedin,
+                  child: Text(
+                    'Linkedin',
+                    style: TextStyle(
+                      color: AppColors.lightNeon,
+                    ),
+                  ),
                 ),
-                child: Text('Linkedin'),
               ),
               const SizedBox(height: 50),
               Text('MY SKILLS', style: AppStyles.title),
@@ -210,10 +299,38 @@ class About extends StatelessWidget {
           ),
         ),
       );
-
+void _goToGithub(){
+    launchUrlString(AppConstants.github);
+  }
+  void _goToLinkedin(){
+  launchUrlString(AppConstants.linkedin);
+  }
+}
   void _downloadCV() {
     launchUrlString(AppConstants.cv);
   }
 
-  Widget _buildSkill(Skill skill) => Chip(label: Text(skill.name!));
-}
+      Widget _buildSkill(Skill skill) =>  HoverContainer(
+      hoverColor: Colors.grey[900],
+
+      child: TextButton(
+          onPressed: () {},
+          style: TextButton.styleFrom(
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(100),
+            ),
+            side: BorderSide(
+              color: AppColors.lightNeon,
+
+            ),
+            backgroundColor:Colors.transparent,
+            padding: const EdgeInsets.symmetric(
+              horizontal: 30,
+              vertical: 20,
+            ),
+          ),
+
+          child: Text(skill.name!,style: TextStyle(
+            color: Colors.grey,
+          ),)));
+

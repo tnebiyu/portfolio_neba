@@ -206,6 +206,7 @@ class _HomeState extends State<Home> {
       ),
       mobileScreen: Scaffold(
         drawer: Drawer(
+          backgroundColor: kBackgroundColor,
           child: SingleChildScrollView(
             child: Column(
               children: [
@@ -220,7 +221,7 @@ class _HomeState extends State<Home> {
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(1000),
                     child: Image.asset(
-                      '$kHomeIconImage',
+                      '$kAboutAvatarImage',
                       fit: BoxFit.cover,
                     ),
                   ),
@@ -230,28 +231,31 @@ class _HomeState extends State<Home> {
                   onTap: _scrollToAbout,
                   title: Text(
                     'About Me',
-                    style: TextStyle(fontWeight: FontWeight.bold),
+                    style: TextStyle(fontWeight: FontWeight.bold,color: Colors.grey[300]),
                   ),
                 ),
                 ListTile(
                   onTap: _scrollToStatistics,
                   title: Text(
                     'Experience',
-                    style: TextStyle(fontWeight: FontWeight.bold),
+                    style: TextStyle(fontWeight: FontWeight.bold,color: Colors.grey[300]),
+
                   ),
                 ),
                 ListTile(
                   onTap: _scrollToWorkingProcess,
                   title: Text(
                     'Process',
-                    style: TextStyle(fontWeight: FontWeight.bold),
+                    style: TextStyle(fontWeight: FontWeight.bold,color: Colors.grey[300]),
+
                   ),
                 ),
                 ListTile(
                   onTap: _scrollToRecentProjects,
                   title: Text(
                     'Projects',
-                    style: TextStyle(fontWeight: FontWeight.bold),
+                    style: TextStyle(fontWeight: FontWeight.bold,color: Colors.grey[300]),
+
                   ),
                 ),
                 Divider(),
@@ -268,7 +272,8 @@ class _HomeState extends State<Home> {
                     ),
                     child: Text(
                       'Contact Me',
-                      style: TextStyle(fontWeight: FontWeight.bold),
+                      style: TextStyle(fontWeight: FontWeight.bold,color: Colors.black87),
+
                     ),
                   ),
                 ),
@@ -282,7 +287,7 @@ class _HomeState extends State<Home> {
                       },
                       child: AppIcon(
                         'icons/github.png',
-                        color: AppColors.black,
+                        color: AppColors.lightNeon,
                       ),
                     ),
                     const SizedBox(width: 20),
@@ -292,7 +297,7 @@ class _HomeState extends State<Home> {
                       },
                       child: AppIcon(
                         'icons/linkedin.png',
-                        color: AppColors.black,
+                        color: AppColors.lightNeon,
                       ),
                     ),
                     const SizedBox(width: 20),
@@ -302,7 +307,7 @@ class _HomeState extends State<Home> {
                       },
                       child: AppIcon(
                         'icons/twitter.png',
-                        color: AppColors.black,
+                        color: AppColors.lightNeon,
                       ),
                     ),
                     const SizedBox(width: 20),
@@ -339,8 +344,11 @@ class _HomeState extends State<Home> {
                         child: Container(
                           width: 40,
                           height: 40,
-                          color: AppColors.lightNeon,
-                          child: Image.asset('$kHomeIconImage'),
+
+                          child: Icon(
+                            Icons.menu,
+                            color: AppColors.lightNeon,
+                          ),
                         ),
                       ),
                     ),
