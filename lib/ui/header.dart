@@ -32,7 +32,7 @@ class Header extends StatelessWidget {
                   Text(
                     '$kHomeMyName',
                     style: TextStyle(
-                      color: Colors.grey[100],
+                      color: Colors.grey[500],
                       fontSize: 70,
                       fontWeight: FontWeight.w900,
                     ),
@@ -142,7 +142,7 @@ class Header extends StatelessWidget {
                     Text(
                       '$kHomeMyName',
                       style: TextStyle(
-                        color: Colors.grey[100],
+                        color: Colors.grey[500],
                         fontSize: 70,
                         fontWeight: FontWeight.w900,
                       ),
@@ -167,7 +167,7 @@ class Header extends StatelessWidget {
                     kHeaderDescription,
                     style: Theme.of(context).textTheme.bodyText2!.copyWith(
                       color: Colors.grey,
-                      fontSize: 20,
+                      fontSize: 22,
                     ),
                     textAlign: TextAlign.center,
                   ),

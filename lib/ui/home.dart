@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_web_portfolio/ui/responsive_widget.dart';
+import 'package:url_launcher/url_launcher.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 
 import 'about.dart';
@@ -10,8 +11,8 @@ import 'footer.dart';
 import 'header.dart';
 import 'icon.dart';
 import 'my_projects.dart';
-import 'statistics.dart';
-import 'working_process.dart';
+import 'experience.dart';
+import 'services.dart';
 import '../config/colors.dart';
 import '../config/constants.dart';
 
@@ -46,165 +47,260 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return ResponsiveWidget(
       desktopScreen: Scaffold(
-        body: Container(
-          decoration: BoxDecoration(
-            image: DecorationImage(
-              image: AssetImage('$kBackgroundImage'),
-              fit: BoxFit.cover,
-            ),
-          ),
-          child: CustomScrollView(
-            controller: _scrollController,
-            slivers: [
-              SliverAppBar(
-                key: _headerGlobalKey,
-                titleSpacing: 0,
-                toolbarHeight: 100,
-                backgroundColor: Colors.transparent,
-                flexibleSpace: Container(
-                  decoration: BoxDecoration(
-                    image: DecorationImage(
-                      image: AssetImage('$kCoverImage'),
-                      fit: BoxFit.cover,
-                    ),
-                  ),
-                  child: Container(
-                    decoration: BoxDecoration(
-                      gradient: LinearGradient(
-                        begin: Alignment.bottomCenter,
-                        end: Alignment.topCenter,
-                        colors: [
-                          Colors.black,
-                          Colors.black87,
-                          Colors.transparent
-                        ],
-                      ),
-                    ),
-                  ),
-                ),
-                title: Padding(
-                  padding: EdgeInsets.only(
-                    left: MediaQuery.of(context).size.width * .15,
-                  ),
-                  child: ClipRRect(
-                    borderRadius: BorderRadius.circular(1000),
-                    child: Container(
-                      width: 40,
-                      height: 40,
-                      color: AppColors.lightNeon,
-                      child: Image.asset('$kHomeIconImage', fit: BoxFit.cover,),
-                    ),
-                  ),
-                ),
-                bottom: PreferredSize(
-                  preferredSize: Size.fromHeight(500),
-                  child: Header(),
-                ),
-                actions: [
-                  Row(
-                    children: [
-                      MaterialButton(
-                       hoverColor: Colors.white60,
-                        onPressed: _scrollToAbout,
-                        highlightColor: Colors.white60,
+        body:
 
-                        child: Row(
-                          children: [
-                            Text('01.', style: TextStyle(
-                              color: AppColors.lightNeon,
-                              fontWeight: FontWeight.bold,
-                            ),),
-                            SizedBox(width: 4),
-                            Text(
-                              'About Me',
-                              style: TextStyle(
-                                  color: Colors.white, fontWeight: FontWeight.bold),
+                Container(
+                color: Color(0xff012E41),
+                  child: CustomScrollView(
+                    controller: _scrollController,
+                    slivers: [
+                      SliverAppBar(
+                        key: _headerGlobalKey,
+                        titleSpacing: 0,
+                        toolbarHeight: 100,
+                        backgroundColor: Colors.transparent,
+                        flexibleSpace: Container(
+                          decoration: BoxDecoration(
+                            image: DecorationImage(
+                              image: AssetImage('$kCoverImage'),
+                              fit: BoxFit.cover,
                             ),
-                          ],
-                        ),
-                      ),
-                      MaterialButton(
-                        hoverColor: Colors.white60,
-                        onPressed: _scrollToStatistics,
-                        child: Row(
-                          children: [
-                            Text('02.', style: TextStyle(
-                              color: AppColors.lightNeon,
-                              fontWeight: FontWeight.bold,
-                            ),),
-                            SizedBox(width: 4),
-                            Text(
-                              'Experience',
-                              style: TextStyle(
-                                  color: Colors.white, fontWeight: FontWeight.bold),
+                          ),
+                          child: Container(
+                            decoration: BoxDecoration(
+                              gradient: LinearGradient(
+                                begin: Alignment.bottomCenter,
+                                end: Alignment.topCenter,
+                                colors: [
+                                  Colors.black,
+                                  Colors.black87,
+                                  Colors.transparent
+                                ],
+                              ),
                             ),
-                          ],
-                        ),
-                      ),
-                      MaterialButton(
-                        hoverColor: Colors.white60,
-                        onPressed: _scrollToWorkingProcess,
-                        child: Row(
-                          children: [
-                            Text('03.', style: TextStyle(
-                              color: AppColors.lightNeon,
-                              fontWeight: FontWeight.bold,
-                            ),),
-                            SizedBox(width: 4),
-                            Text(
-                              'Process',
-                              style: TextStyle(
-                                  color: Colors.white, fontWeight: FontWeight.bold),
-                            ),
-                          ],
-                        ),
-                      ),
-                      MaterialButton(
-                        hoverColor: Colors.white60,
-                        onPressed: _scrollToRecentProjects,
-                        child: Row(
-                          children: [
-                            Text('04.', style: TextStyle(
-                              color: AppColors.lightNeon,
-                              fontWeight: FontWeight.bold,
-                            ),),
-                            SizedBox(width: 4),
-                            Text(
-                              'Projects',
-                              style: TextStyle(
-                                  color: Colors.white, fontWeight: FontWeight.bold),
-                            ),
-                          ],
-                        ),
-                      ),
-                      const SizedBox(width: 20),
-                      TextButton(
-                        onPressed: _scrollToContactUs,
-                        style: TextButton.styleFrom(
-                          backgroundColor: AppColors.lightNeon,
-                          padding: const EdgeInsets.symmetric(
-                            horizontal: 40,
-                            vertical: 15,
                           ),
                         ),
-                        child: Text(
-                          'Contact Me',
-                          style: TextStyle(
-                              color: Colors.black, fontWeight: FontWeight.bold),
+                        title: Padding(
+                          padding: EdgeInsets.only(
+                            left: MediaQuery.of(context).size.width * .15,
+                          ),
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.circular(1000),
+                            child: Container(
+                              width: 40,
+                              height: 40,
+                              color: AppColors.lightNeon,
+                              child: Image.asset('$kHomeIconImage', fit: BoxFit.cover,),
+                            ),
+                          ),
                         ),
+                        bottom: PreferredSize(
+                          preferredSize: Size.fromHeight(500),
+                          child: Stack(children:[
+                            Positioned(
+                              top: 0,
+                              left: 0,
+
+                              bottom: 0,
+
+                              child: Container(
+                                height:200,
+                                width: 50,
+                                color: Colors.transparent,
+
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    RotatedBox(
+                                      quarterTurns: 1,
+                                      child: RichText(
+                                        text: TextSpan(
+                                          text: 'nebiyu28@gmail.com',
+                                          style: TextStyle(
+                                            color: Colors.grey,
+                                            fontSize: 20,
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                    SizedBox(height: 20),
+                                    RotatedBox(
+                                      quarterTurns: 1,
+                                      child: RichText(
+                                        text: TextSpan(
+                                          text: '+251932549271',
+                                          style: TextStyle(
+                                            color: Colors.grey,
+                                            fontSize: 20,
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+SizedBox(height: 20),
+
+
+                                  ],
+                                ),
+                              ),
+                            ),
+                            Positioned(
+                              top: 190,
+                              right: 0,
+
+                              bottom: 0,
+
+                              child: Container(
+                                width: 50,
+                                color: Colors.transparent,
+
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                  InkWell(
+                                     onTap: () async {
+                                       await launchUrlString(AppConstants.github);
+                                      },
+                                      child: AppIcon('icons/github.png',color: Colors.grey,)),
+                                    SizedBox(height: 20),
+                                    InkWell(
+                                        onTap: () async {
+                                          await launchUrlString(AppConstants.linkedin);
+                                        },
+                                        child: AppIcon('icons/linkedin.png',color: Colors.grey,)),
+                                    SizedBox(height: 25),
+                                    InkWell(
+                                        onTap: () async {
+                                          await launchUrlString(AppConstants.twitter);
+                                        },
+                                        child: AppIcon('icons/twitter.png',color: Colors.grey,)),
+                                    SizedBox(height: 25),
+                                    Container(
+                                      height: 55,
+
+                                      child: VerticalDivider(
+                                        color: Colors.grey
+                                        ,
+                                        thickness: 2,
+                                        width: 2,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ),
+
+
+                            Header()]),
+                        ),
+                        actions: [
+                          Row(
+                            children: [
+                              MaterialButton(
+                               hoverColor: Colors.white60,
+                                onPressed: _scrollToAbout,
+                                highlightColor: Colors.white60,
+
+                                child: Row(
+                                  children: [
+                                    Text('01.', style: TextStyle(
+                                      color: AppColors.lightNeon,
+                                      fontWeight: FontWeight.bold,
+                                    ),),
+                                    SizedBox(width: 4),
+                                    Text(
+                                      'About Me',
+                                      style: TextStyle(
+                                          color: Colors.white, fontWeight: FontWeight.bold),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              MaterialButton(
+                                hoverColor: Colors.white60,
+                                onPressed: _scrollToStatistics,
+                                child: Row(
+                                  children: [
+                                    Text('02.', style: TextStyle(
+                                      color: AppColors.lightNeon,
+                                      fontWeight: FontWeight.bold,
+                                    ),),
+                                    SizedBox(width: 4),
+                                    Text(
+                                      'Experience',
+                                      style: TextStyle(
+                                          color: Colors.white, fontWeight: FontWeight.bold),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              MaterialButton(
+                                hoverColor: Colors.white60,
+                                onPressed: _scrollToWorkingProcess,
+                                child: Row(
+                                  children: [
+                                    Text('03.', style: TextStyle(
+                                      color: AppColors.lightNeon,
+                                      fontWeight: FontWeight.bold,
+                                    ),),
+                                    SizedBox(width: 4),
+                                    Text(
+                                      'Services',
+                                      style: TextStyle(
+                                          color: Colors.white, fontWeight: FontWeight.bold),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              MaterialButton(
+                                hoverColor: Colors.white60,
+                                onPressed: _scrollToRecentProjects,
+                                child: Row(
+                                  children: [
+                                    Text('04.', style: TextStyle(
+                                      color: AppColors.lightNeon,
+                                      fontWeight: FontWeight.bold,
+                                    ),),
+                                    SizedBox(width: 4),
+                                    Text(
+                                      'Projects',
+                                      style: TextStyle(
+                                          color: Colors.white, fontWeight: FontWeight.bold),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              const SizedBox(width: 20),
+                              TextButton(
+                                onPressed: _scrollToContactUs,
+                                style: TextButton.styleFrom(
+                                  backgroundColor: AppColors.lightNeon,
+                                  padding: const EdgeInsets.symmetric(
+                                    horizontal: 40,
+                                    vertical: 15,
+                                  ),
+                                ),
+                                child: Text(
+                                  'Contact Me',
+                                  style: TextStyle(
+                                      color: Colors.black, fontWeight: FontWeight.bold,
+                                  fontSize: 16),
+                                ),
+                              ),
+                            ],
+                          ),
+                          SizedBox(width: MediaQuery.of(context).size.width * .15),
+                        ],
                       ),
+                      ..._slivers(),
                     ],
                   ),
-                  SizedBox(width: MediaQuery.of(context).size.width * .15),
-                ],
-              ),
-              ..._slivers(),
-            ],
-          ),
-        ),
+
+            ),
+
+
         floatingActionButton: _buildFab(),
-      ),
-      mobileScreen: Scaffold(
+
+      ),mobileScreen: Scaffold(
         drawer: Drawer(
           backgroundColor: kBackgroundColor,
           child: SingleChildScrollView(
@@ -231,14 +327,14 @@ class _HomeState extends State<Home> {
                   onTap: _scrollToAbout,
                   title: Text(
                     'About Me',
-                    style: TextStyle(fontWeight: FontWeight.bold,color: Colors.grey[300]),
+                    style: TextStyle(fontWeight: FontWeight.bold,color: Colors.grey[500]),
                   ),
                 ),
                 ListTile(
                   onTap: _scrollToStatistics,
                   title: Text(
                     'Experience',
-                    style: TextStyle(fontWeight: FontWeight.bold,color: Colors.grey[300]),
+                    style: TextStyle(fontWeight: FontWeight.bold,color: Colors.grey[500]),
 
                   ),
                 ),
@@ -246,7 +342,7 @@ class _HomeState extends State<Home> {
                   onTap: _scrollToWorkingProcess,
                   title: Text(
                     'Process',
-                    style: TextStyle(fontWeight: FontWeight.bold,color: Colors.grey[300]),
+                    style: TextStyle(fontWeight: FontWeight.bold,color: Colors.grey[500]),
 
                   ),
                 ),
@@ -254,7 +350,7 @@ class _HomeState extends State<Home> {
                   onTap: _scrollToRecentProjects,
                   title: Text(
                     'Projects',
-                    style: TextStyle(fontWeight: FontWeight.bold,color: Colors.grey[300]),
+                    style: TextStyle(fontWeight: FontWeight.bold,color: Colors.grey[500]),
 
                   ),
                 ),
@@ -272,7 +368,7 @@ class _HomeState extends State<Home> {
                     ),
                     child: Text(
                       'Contact Me',
-                      style: TextStyle(fontWeight: FontWeight.bold,color: Colors.black87),
+                      style: TextStyle(fontWeight: FontWeight.bold,color: kBackgroundColor, fontSize: 16),
 
                     ),
                   ),
@@ -386,7 +482,7 @@ class _HomeState extends State<Home> {
         ),
         floatingActionButton: _buildFab(),
       ),
-    );
+        );
   }
 
   List<Widget> _slivers() => [
@@ -396,11 +492,11 @@ class _HomeState extends State<Home> {
         ),
         SliverToBoxAdapter(
           key: _statisticsGlobaleKey,
-          child: Statistics(),
+          child: Experience(),
         ),
         SliverToBoxAdapter(
           key: _workingProcessGlobaleKye,
-          child: Offer(),
+          child: Service(),
         ),
         SliverToBoxAdapter(
           key: _recentProjectsGlobaleKey,
@@ -428,7 +524,7 @@ class _HomeState extends State<Home> {
                 ? _scrollToHeader
                 : null, // make sure user cannot click when button hidden
             mini: true,
-            child: AppIcon('icons/double-up-arrow.png', size: 20),
+            child: AppIcon('icons/double-up-arrow.png', size: 20, color: kBackgroundColor),
           ),
         );
       },

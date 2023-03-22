@@ -8,10 +8,7 @@ import '../data/skills.dart';
 import '../config/styles.dart';
 import '../config/colors.dart';
 
-
 class About extends StatelessWidget {
-
-
   @override
   Widget build(BuildContext context) => ResponsiveWidget(
         desktopScreen: Container(
@@ -29,7 +26,7 @@ class About extends StatelessWidget {
                     child: Container(
                       color: AppColors.greyLight,
                       child: Image.asset(
-                       kAboutAvatarImage,
+                        kAboutAvatarImage,
                         width: 300,
                         height: 300,
                         fit: BoxFit.cover,
@@ -43,40 +40,50 @@ class About extends StatelessWidget {
                       children: [
                         Row(
                           children: [
-                            Text('01. ', style: TextStyle(color: AppColors.lightNeon, fontSize: 20, fontWeight: FontWeight.bold)),
+                            Text('01. ',
+                                style: TextStyle(
+                                    color: AppColors.lightNeon,
+                                    fontSize: 20,
+                                    fontWeight: FontWeight.bold)),
                             Text(
                               'ABOUT ME',
                               style: TextStyle(
-                                color: AppColors.lightNeon,
+                                color: Colors.grey[500],
                                 fontSize: 28,
                                 fontWeight: FontWeight.bold,
                               ),
                             ),
+                            SizedBox( width: 20),
+                            Container(
+                              width: 360,
+                              child: Divider(
+                                color: Colors.grey,
+                                thickness: 0.5,
+
+                              ),
+                            )
                           ],
                         ),
                         SizedBox(height: 10),
-                        Text(kAboutDescription,
-
-
-                          style: Theme.of(context).textTheme.bodyText2!.copyWith(
-                                color: Colors.grey,
-                                fontSize: 20,
-                              ),
+                        Text(
+                          kAboutDescription,
+                          style:
+                              Theme.of(context).textTheme.bodyText2!.copyWith(
+                                    color: Colors.grey,
+                                    fontSize: 20,
+                                  ),
                         ),
                         const SizedBox(height: 30),
                         Row(
                           children: [
                             HoverContainer(
                               hoverColor: Colors.grey[900],
-
-
                               child: TextButton(
-
                                 style: TextButton.styleFrom(
                                   side: BorderSide(
                                     color: AppColors.lightNeon,
                                   ),
-                                  backgroundColor:Colors.transparent,
+                                  backgroundColor: Colors.transparent,
                                   padding: const EdgeInsets.symmetric(
                                     horizontal: 30,
                                     vertical: 20,
@@ -94,15 +101,12 @@ class About extends StatelessWidget {
                             const SizedBox(width: 20),
                             HoverContainer(
                               hoverColor: Colors.grey[900],
-
-
                               child: TextButton(
-
                                 style: TextButton.styleFrom(
                                   side: BorderSide(
                                     color: AppColors.lightNeon,
                                   ),
-                                  backgroundColor:Colors.transparent,
+                                  backgroundColor: Colors.transparent,
                                   padding: const EdgeInsets.symmetric(
                                     horizontal: 30,
                                     vertical: 20,
@@ -120,15 +124,12 @@ class About extends StatelessWidget {
                             const SizedBox(width: 20),
                             HoverContainer(
                               hoverColor: Colors.grey[900],
-
-
                               child: TextButton(
-
                                 style: TextButton.styleFrom(
                                   side: BorderSide(
                                     color: AppColors.lightNeon,
                                   ),
-                                  backgroundColor:Colors.transparent,
+                                  backgroundColor: Colors.transparent,
                                   padding: const EdgeInsets.symmetric(
                                     horizontal: 30,
                                     vertical: 20,
@@ -151,7 +152,12 @@ class About extends StatelessWidget {
                 ],
               ),
               const SizedBox(height: 100),
-              Text('MY SKILLS', style: AppStyles.title),
+              Text('MY SKILLS', style: TextStyle(
+                color: Colors.grey[500],
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+              )),
+              const SizedBox(height: 10),
               Container(width: 100, height: 2, color: AppColors.lightNeon),
               const SizedBox(height: 3),
               Container(width: 75, height: 2, color: AppColors.lightNeon),
@@ -178,7 +184,7 @@ class About extends StatelessWidget {
                 child: Container(
                   color: AppColors.greyLight,
                   child: Image.asset(
-                   kAboutAvatarImage,
+                    kAboutAvatarImage,
                     width: 150,
                     height: 150,
                     fit: BoxFit.cover,
@@ -186,36 +192,52 @@ class About extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 20),
-              Text(
-                'ABOUT ME',
-                style: TextStyle(
-                  color: AppColors.lightNeon,
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold,
-                ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text('01. ',
+                      style: TextStyle(
+                          color: AppColors.lightNeon,
+                          fontSize: 14,
+                          fontWeight: FontWeight.bold)),
+                  Text(
+                    'ABOUT ME',
+                    style: TextStyle(
+                      color: Colors.grey[500],
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  const SizedBox(width: 20),
+                  Container(
+                    width: 120,
+                    child: Divider(
+                      color: Colors.grey,
+                      thickness: 0.5,
+
+                    ),
+                  )
+                ],
               ),
+              SizedBox(height: 20),
               Text(
                 kAboutDescription,
                 style: Theme.of(context).textTheme.bodyText2!.copyWith(
-                  color: Colors.grey,
-                  fontSize: 13,
-                ),
+                      color: Colors.grey,
+                      fontSize: 13,
+                    ),
                 textAlign: TextAlign.center,
               ),
               const SizedBox(height: 30),
-
               const SizedBox(height: 20),
               HoverContainer(
                 hoverColor: Colors.grey[900],
-
-
                 child: TextButton(
-
                   style: TextButton.styleFrom(
                     side: BorderSide(
                       color: AppColors.lightNeon,
                     ),
-                    backgroundColor:Colors.transparent,
+                    backgroundColor: Colors.transparent,
                     padding: const EdgeInsets.symmetric(
                       horizontal: 30,
                       vertical: 20,
@@ -233,15 +255,12 @@ class About extends StatelessWidget {
               const SizedBox(height: 20),
               HoverContainer(
                 hoverColor: Colors.grey[900],
-
-
                 child: TextButton(
-
                   style: TextButton.styleFrom(
                     side: BorderSide(
                       color: AppColors.lightNeon,
                     ),
-                    backgroundColor:Colors.transparent,
+                    backgroundColor: Colors.transparent,
                     padding: const EdgeInsets.symmetric(
                       horizontal: 30,
                       vertical: 20,
@@ -259,15 +278,12 @@ class About extends StatelessWidget {
               const SizedBox(height: 20),
               HoverContainer(
                 hoverColor: Colors.grey[900],
-
-
                 child: TextButton(
-
                   style: TextButton.styleFrom(
                     side: BorderSide(
                       color: AppColors.lightNeon,
                     ),
-                    backgroundColor:Colors.transparent,
+                    backgroundColor: Colors.transparent,
                     padding: const EdgeInsets.symmetric(
                       horizontal: 30,
                       vertical: 20,
@@ -283,7 +299,11 @@ class About extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 50),
-              Text('MY SKILLS', style: AppStyles.title),
+              Text('MY SKILLS', style: TextStyle(
+                color: Colors.grey[500],
+                fontSize: 18,
+                fontWeight: FontWeight.bold,
+              )),
               Container(width: 75, height: 2, color: AppColors.lightNeon),
               const SizedBox(height: 3),
               Container(width: 50, height: 2, color: AppColors.lightNeon),
@@ -299,38 +319,39 @@ class About extends StatelessWidget {
           ),
         ),
       );
-void _goToGithub(){
+  void _goToGithub() {
     launchUrlString(AppConstants.github);
   }
-  void _goToLinkedin(){
-  launchUrlString(AppConstants.linkedin);
+
+  void _goToLinkedin() {
+    launchUrlString(AppConstants.linkedin);
   }
 }
-  void _downloadCV() {
-    launchUrlString(AppConstants.cv);
-  }
 
-      Widget _buildSkill(Skill skill) =>  HoverContainer(
-      hoverColor: Colors.grey[900],
+void _downloadCV() {
+  launchUrlString(AppConstants.cv);
+}
 
-      child: TextButton(
-          onPressed: () {},
-          style: TextButton.styleFrom(
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(100),
-            ),
-            side: BorderSide(
-              color: AppColors.lightNeon,
-
-            ),
-            backgroundColor:Colors.transparent,
-            padding: const EdgeInsets.symmetric(
-              horizontal: 30,
-              vertical: 20,
-            ),
+Widget _buildSkill(Skill skill) => HoverContainer(
+    hoverColor: Colors.grey[900],
+    child: TextButton(
+        onPressed: () {},
+        style: TextButton.styleFrom(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(100),
           ),
-
-          child: Text(skill.name!,style: TextStyle(
+          side: BorderSide(
+            color: AppColors.lightNeon,
+          ),
+          backgroundColor: Colors.transparent,
+          padding: const EdgeInsets.symmetric(
+            horizontal: 30,
+            vertical: 20,
+          ),
+        ),
+        child: Text(
+          skill.name!,
+          style: TextStyle(
             color: Colors.grey,
-          ),)));
-
+          ),
+        )));

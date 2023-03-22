@@ -19,7 +19,7 @@ mixin AppConstants {
 }
 const kAboutAvatarImage = 'images/nebahid.png';
 const kHomeIconImage = 'images/homeIcon1.jpg';
-const kBackgroundImage = 'images/background.jpg';
+const kBackgroundImage = 'images/backg.jpeg';
 const   kBackgroundColor = Color(0xFF0B1A2E);
 const kCardColor = Color(0xFF112340);
 const kCoverImage = 'images/cover.JPG';

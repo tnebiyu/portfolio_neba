@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:url_launcher/url_launcher_string.dart';
 
 import 'responsive_widget.dart';
 import '../data/projects.dart';
@@ -189,7 +190,7 @@ class Footer extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
-                  'Proudly powered by OuahidDev ©${DateTime.now().year}',
+                  'Powered by Nebiyu ©${DateTime.now().year}',
                   style: TextStyle(
                     color: AppColors.greyLight!.withOpacity(.75),
                   ),
@@ -365,7 +366,7 @@ class Footer extends StatelessWidget {
             ),
             const SizedBox(height: 20),
             Text(
-              'Proudly powered by OuahidDev ©${DateTime.now().year}',
+              'Powered by Nebiyu ©${DateTime.now().year}',
               style: TextStyle(
                 color: AppColors.greyLight!.withOpacity(.75),
               ),
@@ -402,21 +403,21 @@ class Footer extends StatelessWidget {
   List<Widget> _socialMedia() => [
         InkWell(
           onTap: () async {
-            launch(AppConstants.github);
+            launchUrlString(AppConstants.github);
           },
           child: AppIcon('icons/github.png'),
         ),
         const SizedBox(width: 20),
         InkWell(
           onTap: () {
-            launch(AppConstants.linkedin);
+            launchUrlString(AppConstants.linkedin);
           },
           child: AppIcon('icons/linkedin.png'),
         ),
         const SizedBox(width: 20),
         InkWell(
           onTap: () {
-            launch(AppConstants.twitter);
+            launchUrlString(AppConstants.twitter);
           },
           child: AppIcon('icons/twitter.png'),
         ),

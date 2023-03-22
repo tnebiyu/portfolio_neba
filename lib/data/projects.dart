@@ -11,79 +11,41 @@ class Project {
 // ignore: non_constant_identifier_names
 List<Project> PROJECTS = [
   Project(
-    name: 'Omran',
+    name: 'Campus Podcast',
     description:
-        'Developing a strategic plan that can lead the Muslim Ummah towards global competitiveness and can direct the efforts of qualified and skilled youth towards optimal utilization of planning and institutional tools to contribute to the renaissance of their communities and homeland countries.',
-    image: 'images/projects/omran.png',
-    url: 'https://play.google.com/store/apps/details?id=org.omran.android',
-    skills: [
-      'Dart',
-      'Java',
-      'Php',
-      'Sql',
-      'Flutter',
-      'OneSignal',
-      'Git',
-    ],
-  ),
-  Project(
-    name: 'Topfood',
-    description: 'Food delivery app',
-    image: 'images/projects/topfood.png',
-    url:
-        'https://play.google.com/store/apps/details?id=dz.topfood.top_food_client',
+        'Campus Podcast is a podcast app for students also youths in general. It is a platform that allows you to listen to podcasts and share them with your friends. It is a platform that allows you to listen to podcasts and share them with your friends.',
+
+    image: 'images/projects/gbi.jpg',
+    url: 'https://github.com/tnebiyu/gbi-podcast',
     skills: [
       'Dart',
       'Flutter',
-      'Git',
-    ],
-  ),
-  Project(
-    name: 'Toptaxi',
-    description:
-        'Toptaxi is a third party transportation service, which is intended to provide cars to its customers through a smart application whenever they request. The use of this application is free',
-    image: 'images/projects/toptaxi.png',
-    url: 'https://play.google.com/store/apps/details?id=toptaxi.dz',
-    skills: [
-      'Java',
-      'Php',
-      'JavaScript',
-      'Html',
-      'Css',
-      'Sql',
       'Firebase',
-      'Laravel',
-      'OneSignal',
       'Git',
     ],
   ),
   Project(
-    name: 'Nataloe',
-    description:
-        'nataloe شركة جزائرية - إسبانية متخصصة بانتاج مستحضرات شبه صيدلانية للعناية اليومية بالبشرة اعتمادا على خلاصتي الألوفيرا والحلزون والزيوت الأساسية',
-    image: 'images/projects/nataloe.png',
-    url: 'https://play.google.com/store/apps/details?id=com.nataloe',
+    name: 'KIT PLC',
+    description: 'I built a modern official app and message app for KENERA INTERNATIONAL TRADING PLC which allow the employers to communicate with their employees and send them notifications and messages. also clients can see the products and services of the company and can contact the company through the app.',
+    image: 'images/projects/kenera.jpg',
+    url: 'https://github.com/tnebiyu/kenera-plc',
     skills: [
-      'Kotlin',
-      'Php',
-      'JavaScript',
-      'Html',
-      'Css',
-      'Sql',
+      'Dart',
+      'Flutter',
       'Firebase',
-      'Laravel',
       'Git',
     ],
   ),
   Project(
-    name: 'جداء',
+    name: 'Movie App',
     description:
-        'يعتبر تعليم الطفل جدول الضرب من أصعب الأمور بالنسبة للأولياء وممل بالنسبة لطفل، لكن مع التطور التكنولوجي وحب الاطفال للتكنولوجيا أصبح ذلك من أيسر المهام على الأولياء والطفل على حد سواء ؛ تطبيق جداء يعتبر الحل الامثل لتعلم جدول الضرب خطوة بخطوة بطريقة سهلة وممتعة مع أصوات خاصة بالإجابة الصحيحة أوالخاطئة، أيضا التطبيق يعطيك تقييما لمستواك خلال التعلم تقييم لكل الجداول معا وتقييم خاص لكل جدول كما يمكنك التطبيق من إجراء إمتحان مباشر لتحديد المستوى ويقوم بحفظ كل نتائجك مع التقييم والتاريخ وبالتالي يمكنك الرجوع لها في أي وقت للإطلاع عليها وملاحظة مراحل تطورك مع الوقت.',
-    image: 'images/projects/juda.png',
-    url: 'https://play.google.com/store/apps/details?id=com.ouahiddev.juda',
+        'Movie App is a movie app that allows you to search for movies and get information about them. I used the TMDB API to get the data.',
+    image: 'images/projects/gbi.jpg',
+    url: 'https://github.com/tnebiyu/ariob_movies',
     skills: [
-      'Java',
-      'Sql',
+      'Dart',
+      'Flutter',
+      'Firebase',
       'Git',
     ],
   ),

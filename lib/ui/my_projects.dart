@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:url_launcher/url_launcher_string.dart';
 
 import 'responsive_widget.dart';
 import '../data/projects.dart';
@@ -14,32 +15,80 @@ class MyProjects extends StatelessWidget {
 
         padding: EdgeInsets.symmetric(vertical: 100),
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text('MY PROJECTS', style: AppStyles.title),
-            Container(width: 100, height: 2, color: AppColors.lightNeon),
-            const SizedBox(height: 3),
-            Container(width: 75, height: 2, color: AppColors.lightNeon),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text('04. ',
+                    style: TextStyle(
+                        color: AppColors.lightNeon,
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold)),
+                Text(
+                    'MY PROJECTS',
+                    style: TextStyle(
+                      color: Colors.grey[500],
+                      fontWeight: FontWeight.bold,
+                      fontSize: 32,
+
+
+                    )
+                ),
+                const SizedBox(width: 20),
+                Container(
+                  width: 360,
+                  child: Divider(
+                    color: Colors.grey,
+                    thickness: 0.5,
+
+                  ),
+                )
+
+              ],
+            ),
             const SizedBox(height: 50),
             ...PROJECTS.map((p) => _buildProject(context, p)).toList(),
           ],
         ),
       ),
       mobileScreen: Container(
-        color: AppColors.greyLight,
+        color: Colors.grey[500],
         padding: EdgeInsets.symmetric(
           horizontal: MediaQuery.of(context).size.width * .15,
           vertical: 50,
         ),
         child: Column(
+
           children: [
-            Text(
-              'MY PROJECTS',
-              style: AppStyles.title,
-              textAlign: TextAlign.center,
+            Row(
+              children: [
+                Text('04. ',
+                    style: TextStyle(
+                        color: AppColors.lightNeon,
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold)),
+                Text(
+                  'MY PROJECTS',
+                  style: TextStyle(
+                    color: Colors.grey[500],
+                    fontSize: 20,
+
+
+                 )
+                ),
+                const SizedBox(width: 20),
+                Container(
+                  width: 120,
+                  child: Divider(
+                    color: Colors.grey,
+                    thickness: 0.5,
+
+                  ),
+                )
+
+              ],
             ),
-            Container(width: 75, height: 2, color: AppColors.lightNeon),
-            const SizedBox(height: 3),
-            Container(width: 50, height: 2, color: AppColors.lightNeon),
             const SizedBox(height: 50),
             Wrap(
               children: PROJECTS.map((p) => _buildProject(context, p)).toList(),
@@ -73,11 +122,19 @@ class MyProjects extends StatelessWidget {
                         SizedBox(
                           height: MediaQuery.of(context).size.width * .01,
                         ),
-                        Text(project.name!, style: AppStyles.title),
+                        Text(project.name!, style: TextStyle(
+                          color: Colors.grey[300],
+                          fontSize: 22,
+
+
+                        )),
                         SizedBox(
                           height: MediaQuery.of(context).size.width * .01,
                         ),
-                        Text(project.description!),
+                        Text(project.description!, style: TextStyle(
+                          color: Colors.grey[300],
+                          fontSize: 14,
+                        ),),
                         SizedBox(
                           height: MediaQuery.of(context).size.width * .025,
                         ),
@@ -151,7 +208,7 @@ class MyProjects extends StatelessWidget {
               ),
               TextButton(
                 onPressed: () {
-                  launch(project.url!);
+                  launchUrlString(project.url!);
                 },
                 style: TextButton.styleFrom(
                   primary: AppColors.black,

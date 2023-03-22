@@ -6,7 +6,7 @@ import '../config/styles.dart';
 import '../config/colors.dart';
 import 'icon.dart';
 
-class Offer extends StatelessWidget {
+class Service extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ResponsiveWidget(
@@ -18,10 +18,34 @@ class Offer extends StatelessWidget {
         ),
         child: Column(
           children: [
-            Text('WORKING PROCESS', style: AppStyles.title),
-            Container(width: 100, height: 2, color: AppColors.lightNeon),
-            const SizedBox(height: 3),
-            Container(width: 75, height: 2, color: AppColors.lightNeon),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text('03. ',
+                    style: TextStyle(
+                        color: AppColors.lightNeon,
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold)),
+                Text(
+                  'What I\'m Offering',
+                  style: TextStyle(
+                    color: Colors.grey[500],
+                    fontSize: 28,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                SizedBox( width: 20),
+                Container(
+                  width: 360,
+                  child: Divider(
+                    color: Colors.grey,
+                    thickness: 0.5,
+
+                  ),
+                )
+              ],
+            ),
+
             const SizedBox(height: 50),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -59,30 +83,52 @@ class Offer extends StatelessWidget {
         ),
       ),
       mobileScreen: Container(
-        color: Colors.white,
+        color: kBackgroundColor,
         padding: EdgeInsets.symmetric(
           horizontal: MediaQuery.of(context).size.width * .15,
           vertical: 50,
         ),
         child: Column(
           children: [
-            Text(
-              'WORKING PROCESS',
-              style: AppStyles.title,
-              textAlign: TextAlign.center,
+            Row(
+              children: [
+                Text('03. ',
+                    style: TextStyle(
+                        color: AppColors.lightNeon,
+                        fontSize: 14,
+                        fontWeight: FontWeight.bold)),
+                Text(
+                  'What I\'m Offering',
+                  style:TextStyle(
+
+                    color: Colors.grey[500],
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                  ),
+
+                  textAlign: TextAlign.center,
+                ),
+                SizedBox( width: 20),
+                Container(
+                  width: 30,
+                  child: Divider(
+                    color: Colors.grey,
+                    thickness: 0.5,
+
+                  ),
+                )
+              ],
             ),
-            Container(width: 75, height: 2, color: AppColors.lightNeon),
-            const SizedBox(height: 3),
-            Container(width: 50, height: 2, color: AppColors.lightNeon),
+
             const SizedBox(height: 50),
             __buildProcess(context, '01.', 'icons/pencil.png', 'Plan',
-                'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor laboris nisi ut aliquip ex ea commodo.'),
+                'Product design, UI/UX design, Design systems'),
             const SizedBox(height: 10),
             __buildProcess(context, '02.', 'icons/design.png', 'Design',
-                'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor laboris nisi ut aliquip ex ea commodo.'),
+                'Developing scalable web apps and mobile apps'),
             const SizedBox(height: 10),
             __buildProcess(context, '03.', 'icons/coding.png', 'Code',
-                'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor laboris nisi ut aliquip ex ea commodo.'),
+                'Continuous monitoring, maintenance and support'),
           ],
         ),
       ),
@@ -91,9 +137,11 @@ class Offer extends StatelessWidget {
 
   Widget __buildProcess(BuildContext context, String index, String iconPath,
       String title, String description) {
-    return Card(
-      color: kCardColor,
-      elevation: 3,
+    return Container(
+      decoration: BoxDecoration(
+        color: kCardColor,
+        borderRadius: BorderRadius.circular(20),
+      ),
       child: Padding(
         padding: const EdgeInsets.all(20),
         child: Column(
@@ -105,6 +153,7 @@ class Offer extends StatelessWidget {
                 index,
                 style: TextStyle(
                   fontSize: 30,
+                  color: Colors.grey[400],
                   fontWeight: FontWeight.w700,
                 ),
               ),
@@ -112,12 +161,12 @@ class Offer extends StatelessWidget {
             const SizedBox(height: 10),
             Divider(color: AppColors.greyLight),
             const SizedBox(height: 10),
-            AppIcon(iconPath, color: AppColors.black, size: 40),
+            AppIcon(iconPath, color: AppColors.lightNeon, size: 40),
             const SizedBox(height: 20),
             Text(
               title,
               style: TextStyle(
-                color: AppColors.black,
+                color: Colors.grey[500],
                 fontSize: 25,
                 fontWeight: FontWeight.bold,
               ),
@@ -126,7 +175,8 @@ class Offer extends StatelessWidget {
             Text(
               description,
               style: TextStyle(
-                color: Colors.black45,
+                color: Colors.grey,
+                fontSize: 16,
               ),
               textAlign: TextAlign.center,
             )

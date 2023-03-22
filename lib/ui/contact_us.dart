@@ -2,7 +2,10 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_web_portfolio/ui/icon.dart';
+import 'package:hovering/hovering.dart';
 import 'package:mailto/mailto.dart';
+import 'package:url_launcher/url_launcher.dart';
+import 'package:url_launcher/url_launcher_string.dart';
 
 import 'responsive_widget.dart';
 import '../config/constants.dart';
@@ -49,6 +52,7 @@ class _ContactUsState extends State<ContactUs> {
                         'icons/email.png',
                         'Mail Me:',
                         AppConstants.mail,
+
                       ),
                       const SizedBox(height: 20),
                       _buildContactInfo(
@@ -129,7 +133,7 @@ class _ContactUsState extends State<ContactUs> {
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          AppIcon(imagePath, color: AppColors.black.withOpacity(.7), size: 20),
+          AppIcon(imagePath, color: AppColors.lightNeon, size: 20),
           const SizedBox(width: 10),
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -137,14 +141,14 @@ class _ContactUsState extends State<ContactUs> {
               Text(
                 title,
                 style: TextStyle(
-                  color: AppColors.black,
+                  color: Colors.grey[300],
                   fontWeight: FontWeight.bold,
                 ),
               ),
               const SizedBox(height: 5),
               Text(
                 content,
-                style: TextStyle(color: AppColors.black.withOpacity(.7)),
+                style: TextStyle(color: Colors.grey[100]),
               ),
             ],
           )
@@ -160,7 +164,7 @@ class _ContactUsState extends State<ContactUs> {
         Text(
           'Have Something To Write?',
           style: TextStyle(
-            color: AppColors.black,
+            color: Colors.grey,
             fontSize: 20,
             fontWeight: FontWeight.bold,
           ),
@@ -182,6 +186,7 @@ class _ContactUsState extends State<ContactUs> {
                       },
                       decoration: InputDecoration(
                         hintText: 'Your Name',
+                       hintStyle: TextStyle(color: Colors.grey),
                         border: OutlineInputBorder(),
                       ),
                     ),
@@ -196,6 +201,7 @@ class _ContactUsState extends State<ContactUs> {
                       },
                       decoration: InputDecoration(
                         hintText: 'Your Email',
+                        hintStyle: TextStyle(color: Colors.grey),
                         border: OutlineInputBorder(),
                       ),
                     ),
@@ -213,17 +219,35 @@ class _ContactUsState extends State<ContactUs> {
                 },
                 decoration: InputDecoration(
                   hintText: 'Your Message',
+                  hintStyle: TextStyle(color: Colors.grey),
                   border: OutlineInputBorder(),
                 ),
               ),
               const SizedBox(height: 20),
-              TextButton(
-                style: TextButton.styleFrom(
-                  backgroundColor: AppColors.lightNeon,
-                  padding: EdgeInsets.symmetric(vertical: 15, horizontal: 30),
+              HoverContainer(
+                hoverColor: Colors.grey[900],
+
+
+                child: TextButton(
+
+                  style: TextButton.styleFrom(
+                    side: BorderSide(
+                      color: AppColors.lightNeon,
+                    ),
+                    backgroundColor:Colors.transparent,
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 30,
+                      vertical: 15,
+                    ),
+                  ),
+                  onPressed: _sendMail,
+                  child: Text(
+                    'Send',
+                    style: TextStyle(
+                      color: AppColors.lightNeon,
+                    ),
+                  ),
                 ),
-                onPressed: _sendMail,
-                child: Text('Send'),
               ),
             ],
           ),
@@ -242,9 +266,13 @@ class _ContactUsState extends State<ContactUs> {
       body: _contentController.text.trim(),
     );
 
+
+
+await launchUrlString('$mailto');
+
+
     final server = await HttpServer.bind(InternetAddress.loopbackIPv4, 3000);
-    String renderHtml(Mailto mailto) =>
-        '''<html><head><title>mailto example</title></head><body><a href="$mailto">Open mail client</a></body></html>''';
+    String renderHtml(Mailto mailto) => '''<html><head><title>mailto example</title></head><body><a href="$mailto">Open mail client</a></body></html>''';
     await for (HttpRequest request in server) {
       request.response
         ..statusCode = HttpStatus.ok
@@ -253,6 +281,16 @@ class _ContactUsState extends State<ContactUs> {
       await request.response.close();
     }
   }
+  // final server = await HttpServer.bind(InternetAddress.loopbackIPv4, 3000);
+  // String renderHtml(Mailto mailto) =>
+  //     '''<html><head><title>mailto example</title></head><body><a href="$mailto">Open mail client</a></body></html>''';
+  // await for (HttpRequest request in server) {
+  //   request.response
+  //     ..statusCode = HttpStatus.ok
+  //     ..headers.contentType = ContentType.html
+  //     ..write(renderHtml(mailto));
+  //   await request.response.close();
+  //   print(mailto.toString());
 
   @override
   void dispose() {
