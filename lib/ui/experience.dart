@@ -66,41 +66,48 @@ class Experience extends StatelessWidget {
                     position: TabBarPosition.top,
                   ),
                   tabs: [
-                    Tab(text: '2019 - Present'),
-                    Tab(text: '2017 - 2019'),
-                    Tab(text: '2015 - 2017'),
+                    Tab(text: 'Dec 2022 - Present'),
+                    Tab(text: ' July 2022- Dec 2022'),
+                    Tab(text: 'Sep 2021 - Jun 2022'),
                   ],
                   views: [
                     Container(
                       child: Column(
+
                         children: [
                           SizedBox(
-                            height: 50,
+                            height: 30,
                           ),
                           Text('Software Engineer',
                               style: TextStyle(
                                 color: Colors.grey,
-                                fontSize: 20,
+                                fontSize: 22,
                                 fontWeight: FontWeight.w900,
                               )),
-                          Text('Tata Consultancy Services',
+                          SizedBox(
+                            height: 10,
+                          ),
+                          Text('Zoe Techs',
                               style: TextStyle(
                                 color: Colors.grey,
                                 fontSize: 20,
                                 fontWeight: FontWeight.w900,
                               )),
-                          Text('Bangalore, India',
+                          Text('Addis Ababa, Ethiopia',
                               style: TextStyle(
                                 color: Colors.grey,
-                                fontSize: 20,
-                                fontWeight: FontWeight.w900,
+                                fontSize: 12,
+
                               )),
+
+                          SizedBox(
+                            height: 10,),
                           Text(
-                              'I am currently working as a Software Engineer at Tata Consultancy Services. I am working on a project called "TCS iON" which is a learning management system. I am working on the frontend of the project using Angular 8 and Typescript. I am also working on the backend of the project using Java and Spring Boot. I am also working on the database of the project using MySQL. I am also working on the deployment of the project using Docker and Kubernetes.',
+                              'I am currently working as a Software Developer at Zoe Techs.',
                               style: TextStyle(
                                 color: Colors.grey,
-                                fontSize: 20,
-                                fontWeight: FontWeight.w900,
+                                fontSize: 18,
+
                               )),
                         ],
                       ),
@@ -108,53 +115,71 @@ class Experience extends StatelessWidget {
                     Container(
                       child: Column(
                         children: [
+                          SizedBox(
+                            height: 30,),
                           Text('Software Engineer',
                               style: TextStyle(
                                 color: Colors.grey,
-                                fontSize: 20,
+                                fontSize: 22,
                                 fontWeight: FontWeight.w900,
                               )),
-                          Text('Tata Consultancy Services',
+                          SizedBox(
+                            height: 10,
+                          ),
+                          Text('Yament Trading',
                               style: TextStyle(
                                 color: Colors.grey,
                                 fontSize: 20,
                                 fontWeight: FontWeight.w900,
                               )),
-                          Text('Bangalore, India',
+                          Text('Addis Ababa, Ethiopia',
                               style: TextStyle(
                                 color: Colors.grey,
-                                fontSize: 20,
-                                fontWeight: FontWeight.w900,
+                                fontSize: 12,
                               )),
-                          Text(
-                              'I worked as a Software Engineer at Tata Consultancy Services. I worked on a project called "TCS iON" which is a learning management system. I worked on the frontend of the project using Angular 8 and Typescript. I also worked on the backend of the project using Java and Spring Boot. I also worked on the database of the project using MySQL. I also worked on the deployment of the project using Docker and Kubernetes.',
+                          SizedBox(
+                            height: 10,
+                          ),
+                          Text('I worked as a Software Engineer at Yament Trading. I maintained and bug fix the official company website, created digital contents for promotion and managed the company\'s social media accounts ',
                               style: TextStyle(
                                 color: Colors.grey,
-                                fontSize: 20,
-                                fontWeight: FontWeight.w900,
+                                fontSize: 18,
+
                               )),
                         ],
                       ),
                     ),
                     Container(
                       child: Column(children: [
+                        SizedBox(
+                          height: 30,),
                         Text('Software Engineer',
                             style: TextStyle(
                               color: Colors.grey,
-                              fontSize: 20,
+                              fontSize: 22,
                               fontWeight: FontWeight.w900,
                             )),
-                        Text('Tata Consultancy Services',
+                        SizedBox(
+                          height: 10,),
+                        Text('Kenera International Trading',
                             style: TextStyle(
                               color: Colors.grey,
                               fontSize: 20,
-                              fontWeight: FontWeight.w900,
                             )),
-                        Text('Bangalore, India',
+                        Text('Addis Ababa, Ethiopia',
                             style: TextStyle(
                               color: Colors.grey,
-                              fontSize: 20,
-                              fontWeight: FontWeight.w900,
+                              fontSize: 12,
+
+                            )),
+                        SizedBox(
+                          height: 10,),
+                        Text( 'I worked as a Software Engineer at Kenera International Trading. Developed Kenera app that allows user to communicate on project and show recent products and company news to customers,     participate in a project called secured printing system that helps the client to print their documents securely and participate in a project called Document management system that helps the client to print their documents securely.',
+                            style: TextStyle(
+                              color: Colors.grey,
+                              fontSize: 18,
+
+
                             )),
                       ]),
                     )
@@ -209,45 +234,54 @@ class Experience extends StatelessWidget {
                     labelColor: AppColors.lightNeon,
                     unselectedLabelColor: Colors.grey,
                     labelStyle:
-                    TextStyle(fontSize: 12, fontWeight: FontWeight.w900),
+                    TextStyle(fontSize: 8,),
                     unselectedLabelStyle:
-                    TextStyle(fontSize: 12, fontWeight: FontWeight.w900),
+                    TextStyle(fontSize: 8, ),
                     position: TabBarPosition.top,
                   ),
                   tabs: [
-                    Tab(text: '2019 - Present'),
-                    Tab(text: '2017 - 2019'),
-                    Tab(text: '2015 - 2017'),
+                    Tab(text: 'Dec 2022 - Present'),
+                    Tab(text: ' July 2022- Dec 2022'),
+                    Tab(text: 'Sep 2021 - Jun 2022'),
                   ],
                   views: [
                     Container(
                       child: Column(
 
                         children: [
+                          SizedBox(
+                            height: 30,
+                          ),
                           Text('Software Engineer',
                               style: TextStyle(
                                 color: Colors.grey,
                                 fontSize: 18,
                                 fontWeight: FontWeight.w900,
                               )),
-                          Text('Tata Consultancy Services',
+                          SizedBox(
+                            height: 10,
+                          ),
+                          Text('Zoe Techs',
                               style: TextStyle(
                                 color: Colors.grey,
                                 fontSize: 18,
                                 fontWeight: FontWeight.w900,
                               )),
-                          Text('Bangalore, India',
+                          Text('Addis Ababa, Ethiopia',
+                              style: TextStyle(
+                                color: Colors.grey,
+                                fontSize: 10,
+
+                              )),
+
+                          SizedBox(
+                            height: 10,),
+                          Text(
+                              'I am currently working as a Software Developer at Zoe Techs.',
                               style: TextStyle(
                                 color: Colors.grey,
                                 fontSize: 12,
-                                fontWeight: FontWeight.w900,
-                              )),
-                          Text(
-                              'I am currently working as a Software Engineer at Tata Consultancy Services. I am working on a project called "TCS iON" which is a learning management system. I am working on the frontend of the project using Angular 8 and Typescript. I am also working on the backend of the project using Java and Spring Boot. I am also working on the database of the project using MySQL. I am also working on the deployment of the project using Docker and Kubernetes.',
-                              style: TextStyle(
-                                color: Colors.grey,
-                                fontSize: 14,
-                                fontWeight: FontWeight.w900,
+
                               )),
                         ],
                       ),
@@ -255,59 +289,71 @@ class Experience extends StatelessWidget {
                     Container(
                       child: Column(
                         children: [
+                          SizedBox(
+                            height: 30,),
                           Text('Software Engineer',
                               style: TextStyle(
                                 color: Colors.grey,
                                 fontSize: 18,
                                 fontWeight: FontWeight.w900,
                               )),
-                          Text('Tata Consultancy Services',
+                          SizedBox(
+                            height: 10,
+                          ),
+                          Text('Yament Trading',
                               style: TextStyle(
                                 color: Colors.grey,
                                 fontSize: 14,
                                 fontWeight: FontWeight.w900,
                               )),
-                          Text('Bangalore, India',
+                          Text('Addis Ababa, Ethiopia',
+                              style: TextStyle(
+                                color: Colors.grey,
+                                fontSize: 10,
+                              )),
+                          SizedBox(
+                            height: 10,
+                          ),
+                          Text('I worked as a Software Engineer at Yament Trading. I maintained and bug fix the official company website, created digital contents for promotion and managed the company\'s social media accounts ',
                               style: TextStyle(
                                 color: Colors.grey,
                                 fontSize: 12,
-                                fontWeight: FontWeight.w900,
-                              )),
-                          Text(
-                              'I worked as a Software Engineer at Tata Consultancy Services. I worked on a project called "TCS iON" which is a learning management system. I worked on the frontend of the project using Angular 8 and Typescript. I also worked on the backend of the project using Java and Spring Boot. I also worked on the database of the project using MySQL. I also worked on the deployment of the project using Docker and Kubernetes.',
-                              style: TextStyle(
-                                color: Colors.grey,
-                                fontSize: 14,
-                                fontWeight: FontWeight.w900,
+
                               )),
                         ],
                       ),
                     ),
                     Container(
                       child: Column(children: [
+                        SizedBox(
+                          height: 30,),
                         Text('Software Engineer',
                             style: TextStyle(
                               color: Colors.grey,
                               fontSize: 18,
                               fontWeight: FontWeight.w900,
                             )),
-                        Text('Tata Consultancy Services',
+                        SizedBox(
+                          height: 10,),
+                        Text('Kenera International Trading',
                             style: TextStyle(
                               color: Colors.grey,
                               fontSize: 14,
                               fontWeight: FontWeight.w900,
                             )),
-                        Text('Bangalore, India',
+                        Text('Addis Ababa, Ethiopia',
+                            style: TextStyle(
+                              color: Colors.grey,
+                              fontSize: 10,
+
+                            )),
+                        SizedBox(
+                          height: 10,),
+                        Text( 'I worked as a Software Engineer at Kenera International Trading. Developed Kenera app that allows user to communicate on project and show recent products and company news to customers,     participate in a project called secured printing system that helps the client to print their documents securely and participate in a project called Document management system that helps the client to print their documents securely.',
                             style: TextStyle(
                               color: Colors.grey,
                               fontSize: 12,
-                              fontWeight: FontWeight.w900,
-                            )),
-                        Text( 'I worked as a Software Engineer at Tata Consultancy Services. I worked on a project called "TCS iON" which is a learning management system. I worked on the frontend of the project using Angular 8 and Typescript. I also worked on the backend of the project using Java and Spring Boot. I also worked on the database of the project using MySQL. I also worked on the deployment of the project using Docker and Kubernetes.',
-                            style: TextStyle(
-                              color: Colors.grey,
-                              fontSize: 14,
-                              fontWeight: FontWeight.w900,
+
                             )),
                       ]),
                     )

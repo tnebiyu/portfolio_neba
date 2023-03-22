@@ -12,7 +12,7 @@ class Footer extends StatelessWidget {
   final String _getInTouch =
       "You have an idea, I am here to turn your dream into real digital solution.";
   final String _description =
-      "I am developer has around 4 years experience developing mobile and web applications, using different languages and techniques.";
+      " I\'m software developer with expertise in mobile app development and backend development for both mobile and web applications, I provide a full range of services to help you build your next big idea.";
 
   @override
   Widget build(BuildContext context) {

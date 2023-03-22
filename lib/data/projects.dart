@@ -25,7 +25,7 @@ List<Project> PROJECTS = [
     ],
   ),
   Project(
-    name: 'KIT PLC',
+    name: 'KIT App',
     description: 'I built a modern official app and message app for KENERA INTERNATIONAL TRADING PLC which allow the employers to communicate with their employees and send them notifications and messages. also clients can see the products and services of the company and can contact the company through the app.',
     image: 'images/projects/kenera.jpg',
     url: 'https://github.com/tnebiyu/kenera-plc',
@@ -37,15 +37,15 @@ List<Project> PROJECTS = [
     ],
   ),
   Project(
-    name: 'Movie App',
+    name: 'Ariob Movies',
     description:
-        'Movie App is a movie app that allows you to search for movies and get information about them. I used the TMDB API to get the data.',
-    image: 'images/projects/gbi.jpg',
+        'Ariob is a movie app that allows you to search for movies and get information about them. I used the TMDB API to get the data.',
+    image: 'images/projects/movie.png',
     url: 'https://github.com/tnebiyu/ariob_movies',
     skills: [
       'Dart',
       'Flutter',
-      'Firebase',
+
       'Git',
     ],
   ),

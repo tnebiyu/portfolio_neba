@@ -53,7 +53,7 @@ class MyProjects extends StatelessWidget {
         ),
       ),
       mobileScreen: Container(
-        color: Colors.grey[500],
+
         padding: EdgeInsets.symmetric(
           horizontal: MediaQuery.of(context).size.width * .15,
           vertical: 50,
@@ -62,24 +62,26 @@ class MyProjects extends StatelessWidget {
 
           children: [
             Row(
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text('04. ',
                     style: TextStyle(
                         color: AppColors.lightNeon,
-                        fontSize: 20,
+                        fontSize: 14,
                         fontWeight: FontWeight.bold)),
                 Text(
-                  'MY PROJECTS',
-                  style: TextStyle(
-                    color: Colors.grey[500],
-                    fontSize: 20,
+                    'MY PROJECTS',
+                    style: TextStyle(
+                      color: Colors.grey[500],
+                      fontWeight: FontWeight.bold,
+                      fontSize: 20,
 
 
-                 )
+                    )
                 ),
                 const SizedBox(width: 20),
                 Container(
-                  width: 120,
+                  width: 60,
                   child: Divider(
                     color: Colors.grey,
                     thickness: 0.5,
@@ -186,13 +188,20 @@ class MyProjects extends StatelessWidget {
               SizedBox(
                 height: MediaQuery.of(context).size.width * .01,
               ),
-              Text(project.name!, style: AppStyles.title),
+              Text(project.name!, style:TextStyle(
+                color: Colors.grey[300],
+                fontSize: 22,
+              )),
               SizedBox(
                 height: MediaQuery.of(context).size.width * .01,
               ),
               Text(
                 project.description!,
                 textAlign: TextAlign.center,
+                style: TextStyle(
+                  color: Colors.grey[300],
+                  fontSize: 14,
+                ),
               ),
               SizedBox(
                 height: MediaQuery.of(context).size.width * .025,
