@@ -103,7 +103,7 @@ class Experience extends StatelessWidget {
                           SizedBox(
                             height: 10,),
                           Text(
-                              'I am currently working as a Software Developer at Zoe Techs.',
+                              'I am currently working as a Software Developer at Zoe Techs.reviewed teammates code manage project and developed website for client',
                               style: TextStyle(
                                 color: Colors.grey,
                                 fontSize: 18,
@@ -277,7 +277,7 @@ class Experience extends StatelessWidget {
                           SizedBox(
                             height: 10,),
                           Text(
-                              'I am currently working as a Software Developer at Zoe Techs.',
+                              'I am currently working as a Software Developer at Zoe Techs.reviewed teammates code manage project and developed website for client',
                               style: TextStyle(
                                 color: Colors.grey,
                                 fontSize: 12,

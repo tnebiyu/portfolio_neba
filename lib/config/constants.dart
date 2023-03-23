@@ -21,6 +21,7 @@ const kAboutAvatarImage = 'images/nebahid.png';
 const kHomeIconImage = 'images/homeIcon1.jpg';
 const kBackgroundImage = 'images/backg.jpeg';
 const   kBackgroundColor = Color(0xFF0B1A2E);
+const kSplashScreenImage = 'images/start1.png';
 const kCardColor = Color(0xFF112340);
 const kCoverImage = 'images/cover.JPG';
 const kHeaderJobTitle = 'I build art for the web and mobile.';
