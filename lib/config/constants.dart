@@ -15,7 +15,7 @@ mixin AppConstants {
   static final String twitter = 'https://twitter.com/tnebiyu1';
 
 
-  static final String cv = 'https://firebasestorage.googleapis.com/v0/b/neba-chat.appspot.com/o/NebiyuTakele.pdf?alt=media&token=3f700c96-ab0c-4028-ab81-5927c2a5c8b5';
+  static final String cv = 'https://firebasestorage.googleapis.com/v0/b/neba-chat.appspot.com/o/finalCv.pdf?alt=media&token=d30e0335-33c2-41e2-af82-5048abb32d73';
 }
 const kAboutAvatarImage = 'images/nebahid.png';
 const kHomeIconImage = 'images/homeIcon1.jpg';
