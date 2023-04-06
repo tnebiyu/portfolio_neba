@@ -414,8 +414,7 @@ SizedBox(height: 20),
                 const SizedBox(height: 10),
                 Text('+251932549271',style: TextStyle(color: Colors.grey[300], fontWeight: FontWeight.bold),),
                 const SizedBox(height: 10),
-                Text(
-                  '© 2023 All Rights Reserved',
+                Text('© 2023 All Rights Reserved',
                   style: TextStyle(
                     color: Colors.grey[500],
                     fontWeight: FontWeight.bold,

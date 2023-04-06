@@ -27,7 +27,7 @@ class MyApp extends StatelessWidget {
         durationInSeconds: 3,
         backgroundColor: kBackgroundColor,
         navigator: Home(),
-        loadingText: Text('Loading',style: TextStyle(color: Colors.grey[300]),),
+        loadingText: Text('Loading',style: TextStyle(color: Colors.grey[300x]),),
 
     ),
     );

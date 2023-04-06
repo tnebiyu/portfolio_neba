@@ -15,7 +15,7 @@ List<Project> PROJECTS = [
     description:
         'Campus Podcast is a podcast app for students also youths in general. It is a platform that allows you to listen to podcasts and share them with your friends. It is a platform that allows you to listen to podcasts and share them with your friends.',
 
-    image: 'images/projects/gbi.jpg',
+    image: 'images/projects/gbi.png',
     url: 'https://github.com/tnebiyu/gbi-podcast',
     skills: [
       'Dart',
@@ -27,7 +27,7 @@ List<Project> PROJECTS = [
   Project(
     name: 'KIT App',
     description: 'I built a modern official app and message app for KENERA INTERNATIONAL TRADING PLC which allow the employers to communicate with their employees and send them notifications and messages. also clients can see the products and services of the company and can contact the company through the app.',
-    image: 'images/projects/kenera.jpg',
+    image: 'images/projects/kenera.png',
     url: 'https://github.com/tnebiyu/kenera-plc',
     skills: [
       'Dart',
